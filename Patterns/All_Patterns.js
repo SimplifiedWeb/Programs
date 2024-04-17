@@ -128,26 +128,58 @@
 // * * * *
 //* * * * *
 
-function pattern8(num) {
+// function pattern8(num) {
+//   for (var i = 0; i < num; i++) {
+//     var str = "";
+
+//     // Spaces before stars
+//     for (var j = 0; j < num - i - 1; j++) {
+//       str += " ";
+//     }
+
+//     // Stars
+//     for (var k = 0; k < 2 * i + 1; k++) {
+//       str += "*";
+//     }
+
+//     // Spaces after stars
+//     for (var j = 0; j < num - i - 1; j++) {
+//       str += " ";
+//     }
+//     console.log(str);
+//   }
+// }
+
+// pattern8(5);
+
+// Patter-9 ✡✡✡✡✡✡
+// ***********
+//  *********
+//   *******
+//    *****
+//     ***
+//      *
+
+function pattern9(num) {
   for (var i = 0; i < num; i++) {
     var str = "";
 
-    // Spaces before stars
-    for (var j = 0; j < num - i - 1; j++) {
+    // spaces
+    for (var j = 0; j < i; j++) {
       str += " ";
     }
 
-    // Stars
-    for (var k = 0; k < 2 * i + 1; k++) {
+    // stars
+    for (var k = 0; k < 2 * num - (2 * i + 1); k++) {
       str += "*";
     }
 
-    // Spaces after stars
-    for (var j = 0; j < num - i - 1; j++) {
+    // spaces
+    for (var j = 0; j < i; j++) {
       str += " ";
     }
     console.log(str);
   }
 }
 
-pattern8(5);
+pattern9(5);
