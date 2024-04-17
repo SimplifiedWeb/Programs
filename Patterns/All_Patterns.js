@@ -197,44 +197,91 @@
 
 // Tip ---- Practice solving Equations of Algebra you can understand better.
 
-function pattern10(num) {
-  // Top Side
+// function pattern10(num) {
+//   // Top Side
 
-  for (var i = 0; i < num; i++) {
+//   for (var i = 0; i < num; i++) {
+//     var str = "";
+
+//     for (var j = 0; j < num - i - 1; j++) {
+//       str += " ";
+//     }
+
+//     for (var k = 0; k < 2 * i + 1; k++) {
+//       str += "*";
+//     }
+
+//     for (var j = 0; j < num - i - 1; j++) {
+//       str += " ";
+//     }
+//     console.log(str);
+//   }
+
+//   // Bottom Side
+
+//   for (var i = 0; i < num; i++) {
+//     var str = "";
+
+//     for (var j = 0; j < i; j++) {
+//       str += " ";
+//     }
+
+//     for (var k = 0; k < 2 * num - (2 * i + 1); k++) {
+//       str += "*";
+//     }
+
+//     for (var j = 0; j < i; j++) {
+//       str += " ";
+//     }
+//     console.log(str);
+//   }
+// }
+
+// pattern10(5);
+
+// Pattern-11 ✡✡✡✡✡✡
+
+// *
+// **
+// ***
+// ****
+// *****
+// ******
+// *****
+// ****
+// ***
+// **
+// *
+
+// Approach first
+function pattern11(num) {
+  for (var i = 1; i <= 2 * num - 1; i++) {
     var str = "";
-
-    for (var j = 0; j < num - i - 1; j++) {
-      str += " ";
-    }
-
-    for (var k = 0; k < 2 * i + 1; k++) {
-      str += "*";
-    }
-
-    for (var j = 0; j < num - i - 1; j++) {
-      str += " ";
-    }
-    console.log(str);
-  }
-
-  // Bottom Side
-
-  for (var i = 0; i < num; i++) {
-    var str = "";
-
-    for (var j = 0; j < i; j++) {
-      str += " ";
-    }
-
-    for (var k = 0; k < 2 * num - (2 * i + 1); k++) {
-      str += "*";
-    }
-
-    for (var j = 0; j < i; j++) {
-      str += " ";
+    var stars = i;
+    if (i >= num) stars = 2 * num - i;
+    for (var j = 1; j <= stars; j++) {
+      str += " * ";
     }
     console.log(str);
   }
 }
 
-pattern10(5);
+// Approach second
+function pattern11(num) {
+  for (var i = 0; i < num; i++) {
+    var str = "";
+    for (var j = 0; j <= i; j++) {
+      str += " * ";
+    }
+    console.log(str);
+  }
+  for (var i = num; i >= 1; i--) {
+    var str = "";
+    for (var j = 1; j <= i; j++) {
+      str += " * ";
+    }
+    console.log(str);
+  }
+}
+
+pattern11(4);
