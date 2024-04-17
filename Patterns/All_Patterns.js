@@ -160,21 +160,76 @@
 //     ***
 //      *
 
-function pattern9(num) {
+// function pattern9(num) {
+//   for (var i = 0; i < num; i++) {
+//     var str = "";
+
+//     // spaces
+//     for (var j = 0; j < i; j++) {
+//       str += " ";
+//     }
+
+//     // stars
+//     for (var k = 0; k < 2 * num - (2 * i + 1); k++) {
+//       str += "*";
+//     }
+
+//     // spaces
+//     for (var j = 0; j < i; j++) {
+//       str += " ";
+//     }
+//     console.log(str);
+//   }
+// }
+
+// pattern9(5);
+
+// Pattern-10 ✡✡✡✡✡✡
+//    *
+//   * *
+//  * * *
+// * * * *
+//* * * * *
+// * * * *
+//  * * *
+//   * *
+//    *
+
+// Tip ---- Practice solving Equations of Algebra you can understand better.
+
+function pattern10(num) {
+  // Top Side
+
   for (var i = 0; i < num; i++) {
     var str = "";
 
-    // spaces
+    for (var j = 0; j < num - i - 1; j++) {
+      str += " ";
+    }
+
+    for (var k = 0; k < 2 * i + 1; k++) {
+      str += "*";
+    }
+
+    for (var j = 0; j < num - i - 1; j++) {
+      str += " ";
+    }
+    console.log(str);
+  }
+
+  // Bottom Side
+
+  for (var i = 0; i < num; i++) {
+    var str = "";
+
     for (var j = 0; j < i; j++) {
       str += " ";
     }
 
-    // stars
     for (var k = 0; k < 2 * num - (2 * i + 1); k++) {
       str += "*";
     }
 
-    // spaces
     for (var j = 0; j < i; j++) {
       str += " ";
     }
@@ -182,4 +237,4 @@ function pattern9(num) {
   }
 }
 
-pattern9(5);
+pattern10(5);
