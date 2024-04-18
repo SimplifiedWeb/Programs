@@ -465,18 +465,18 @@
 // B C D E F
 // A B C D E F
 
-function pattern19(num) {
-  for (var i = 0; i < num; i++) {
-    var str = "";
+// function pattern19(num) {
+//   for (var i = 0; i < num; i++) {
+//     var str = "";
 
-    for (var j = i; j >= 0; j--) {
-      str += String.fromCharCode(70 - j) + " ";
-    }
-    console.log(str);
-  }
-}
+//     for (var j = i; j >= 0; j--) {
+//       str += String.fromCharCode(70 - j) + " ";
+//     }
+//     console.log(str);
+//   }
+// }
 
-pattern19(6);
+// pattern19(6);
 // Pattern-20 ✡✡✡✡✡✡
 // ************
 // *****  *****
@@ -490,6 +490,51 @@ pattern19(6);
 // ****    ****
 // *****  *****
 // ************
+
+function pattern19(num) {
+  // Upper Half
+
+  for (var i = 1; i <= num; i++) {
+    var str = "";
+
+    for (var j = num; j >= i; j--) {
+      str += "*";
+    }
+
+    for (var k = 1; k < 2 * i - 1; k++) {
+      str += " ";
+    }
+
+    for (var j = num; j >= i; j--) {
+      str += "*";
+    }
+
+    console.log(str);
+  }
+
+  // Lower Half
+
+  for (var i = 1; i <= num; i++) {
+    var str = "";
+
+    for (var j = 1; j <= i; j++) {
+      str += "*";
+    }
+
+    for (var k = 1; k <= 2 * num - 2 * i; k++) {
+      str += " ";
+    }
+
+    for (var j = i; j >= 1; j--) {
+      str += "*";
+    }
+
+    console.log(str);
+  }
+}
+
+pattern19(5);
+
 // Pattern-21 ✡✡✡✡✡✡
 // *          *
 // **        **
