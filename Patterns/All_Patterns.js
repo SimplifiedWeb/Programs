@@ -349,19 +349,19 @@
 // 11  12  13  14  15
 // 16  17  18  19  20  21
 
-function pattern14(num) {
-  let count = 1;
-  for (let i = 1; i <= num; i++) {
-    let str = "";
-    for (let j = 1; j <= i; j++) {
-      str += count + " ";
-      count++;
-    }
-    console.log(str);
-  }
-}
+// function pattern14(num) {
+//   let count = 1;
+//   for (let i = 1; i <= num; i++) {
+//     let str = "";
+//     for (let j = 1; j <= i; j++) {
+//       str += count + " ";
+//       count++;
+//     }
+//     console.log(str);
+//   }
+// }
 
-pattern14(4);
+// pattern14(4);
 
 // Pattern-15 ✡✡✡✡✡✡
 // A
@@ -370,6 +370,21 @@ pattern14(4);
 // A B C D
 // A B C D E
 // A B C D E F
+
+function pattern15(num) {
+  for (var i = 65; i <= 70; i++) {
+    var str = "";
+
+    for (var k = 65; k <= i; k++) {
+      str += String.fromCharCode(k) + " ";
+    }
+
+    console.log(str);
+  }
+}
+
+pattern15(4);
+
 // Pattern-16 ✡✡✡✡✡✡
 
 // A B C D E F
