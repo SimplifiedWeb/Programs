@@ -415,26 +415,48 @@
 // E E E E E
 // F F F F F F
 
-function pattern17(num) {
-  for (var i = 65; i <= 70; i++) {
-    var str = "";
+// function pattern17(num) {
+//   for (var i = 65; i <= 70; i++) {
+//     var str = "";
 
-    for (var k = 65; k <= i; k++) {
-      str += String.fromCharCode(i) + " ";
+//     for (var k = 65; k <= i; k++) {
+//       str += String.fromCharCode(i) + " ";
+//     }
+
+//     console.log(str);
+//   }
+// }
+// pattern17(4);
+
+// Pattern-18 ✡✡✡✡✡✡
+//     A
+//    ABC
+//   ABCDE
+//  ABCDEFG
+// ABCDEFGHI
+
+function pattern18(num) {
+  for (var i = 0; i < num; i++) {
+    var str = "";
+    for (var j = 0; j < num - i - 1; j++) {
+      str += " ";
+    }
+
+    // Stars
+    for (var k = 0; k < 2 * i + 1; k++) {
+      str += String.fromCharCode(65 + k);
+    }
+
+    // Spaces after stars
+    for (var j = 0; j < num - i - 1; j++) {
+      str += " ";
     }
 
     console.log(str);
   }
 }
-pattern17(4);
+pattern18(5);
 
-// Pattern-18 ✡✡✡✡✡✡
-//      A
-//     ABA
-//    ABCBA
-//   ABCDCBA
-//  ABCDEDCBA
-// ABCDEFEDCBA
 // Pattern-19 ✡✡✡✡✡✡
 // F
 // E F
