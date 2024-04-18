@@ -581,21 +581,21 @@
 // *    *
 // ******
 
-function pattern22(num) {
-  for (var i = 0; i < num; i++) {
-    var str = "";
-    for (var j = 0; j < num; j++) {
-      if (i == 0 || j == 0 || i == num - 1 || j === num - 1) {
-        str += "*";
-      } else {
-        str += " ";
-      }
-    }
-    console.log(str);
-  }
-}
+// function pattern22(num) {
+//   for (var i = 0; i < num; i++) {
+//     var str = "";
+//     for (var j = 0; j < num; j++) {
+//       if (i == 0 || j == 0 || i == num - 1 || j === num - 1) {
+//         str += "*";
+//       } else {
+//         str += " ";
+//       }
+//     }
+//     console.log(str);
+//   }
+// }
 
-pattern22(4);
+// pattern22(4);
 
 // Pattern-23 ✡✡✡✡✡✡
 // 6 6 6 6 6 6 6 6 6 6 6
@@ -610,16 +610,26 @@ pattern22(4);
 // 6 5 5 5 5 5 5 5 5 5 6
 // 6 6 6 6 6 6 6 6 6 6 6
 
-// Pattern-24 ✡✡✡✡✡✡
-//     1
-//    1 1
-//   1 2 1
-//  1 3 3 1
-// 1 4 6 4 1
-
 // Pattern-25 ✡✡✡✡✡✡
 
 // ******
 // *    *
 // *    *
 // ******
+
+// function pattern25(num) {
+//   for (var i = 0; i < num; i++) {
+//     var str = "";
+
+//     for (var j = 0; j < num + 2; j++) {
+//       if (i == 0 || j == 0 || i == num - 1 || j == num - 1) {
+//         str += "*";
+//       } else {
+//         str += "  ";
+//       }
+//     }
+//     console.log(str);
+//   }
+// }
+
+// pattern25(4);
