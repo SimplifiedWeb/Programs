@@ -371,19 +371,19 @@
 // A B C D E
 // A B C D E F
 
-function pattern15(num) {
-  for (var i = 65; i <= 70; i++) {
-    var str = "";
+// function pattern15(num) {
+//   for (var i = 65; i <= 70; i++) {
+//     var str = "";
 
-    for (var k = 65; k <= i; k++) {
-      str += String.fromCharCode(k) + " ";
-    }
+//     for (var k = 65; k <= i; k++) {
+//       str += String.fromCharCode(k) + " ";
+//     }
 
-    console.log(str);
-  }
-}
+//     console.log(str);
+//   }
+// }
 
-pattern15(4);
+// pattern15(4);
 
 // Pattern-16 ✡✡✡✡✡✡
 
@@ -393,6 +393,19 @@ pattern15(4);
 // A B C
 // A B
 // A
+
+function pattern16(num) {
+  for (var i = 70; i >= 65; i--) {
+    var str = "";
+
+    for (k = 65; k <= i; k++) {
+      str += String.fromCharCode(k) + " ";
+    }
+    console.log(str);
+  }
+}
+
+pattern16(4);
 
 // Pattern-17 ✡✡✡✡✡✡
 // A
