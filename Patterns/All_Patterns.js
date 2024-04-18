@@ -435,27 +435,27 @@
 //  ABCDEFG
 // ABCDEFGHI
 
-function pattern18(num) {
-  for (var i = 0; i < num; i++) {
-    var str = "";
-    for (var j = 0; j < num - i - 1; j++) {
-      str += " ";
-    }
+// function pattern18(num) {
+//   for (var i = 0; i < num; i++) {
+//     var str = "";
+//     for (var j = 0; j < num - i - 1; j++) {
+//       str += " ";
+//     }
 
-    // Stars
-    for (var k = 0; k < 2 * i + 1; k++) {
-      str += String.fromCharCode(65 + k);
-    }
+//     // Stars
+//     for (var k = 0; k < 2 * i + 1; k++) {
+//       str += String.fromCharCode(65 + k);
+//     }
 
-    // Spaces after stars
-    for (var j = 0; j < num - i - 1; j++) {
-      str += " ";
-    }
+//     // Spaces after stars
+//     for (var j = 0; j < num - i - 1; j++) {
+//       str += " ";
+//     }
 
-    console.log(str);
-  }
-}
-pattern18(5);
+//     console.log(str);
+//   }
+// }
+// pattern18(5);
 
 // Pattern-19 ✡✡✡✡✡✡
 // F
@@ -464,6 +464,19 @@ pattern18(5);
 // C D E F
 // B C D E F
 // A B C D E F
+
+function pattern19(num) {
+  for (var i = 0; i < num; i++) {
+    var str = "";
+
+    for (var j = i; j >= 0; j--) {
+      str += String.fromCharCode(70 - j) + " ";
+    }
+    console.log(str);
+  }
+}
+
+pattern19(6);
 // Pattern-20 ✡✡✡✡✡✡
 // ************
 // *****  *****
