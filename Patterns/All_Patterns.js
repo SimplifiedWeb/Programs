@@ -295,25 +295,50 @@
 // 10101
 // 010101
 
-function pattern12(num) {
-  for (var i = 65; i < 70; i++) {
+// function pattern12(num) {
+//   for (var i = 65; i < 70; i++) {
+//     var str = "";
+//     for (var j = 65; j <= i; j++) {
+//       str += String.fromCharCode(i) + " ";
+//     }
+
+//     console.log(str);
+//   }
+// }
+
+// pattern12(4);
+// Pattern-13 ✡✡✡✡✡✡
+// 1          1
+// 12        21
+// 123      321
+// 1234    4321
+// 12345  54321
+// 123456654321
+
+function pattern13(num) {
+  for (var i = 1; i <= num; i++) {
     var str = "";
-    for (var j = 65; j <= i; j++) {
-      str += String.fromCharCode(i) + " ";
+    // solving tons of equations and simple maths to calculate numbers you can easily do this. By making you'r own formula.
+    var spaces = 2 * (2 * num - 2 * i);
+
+    for (var k = 1; k <= i; k++) {
+      str += k + " ";
+    }
+
+    // Spaces
+    for (var j = 1; j <= spaces; j++) {
+      str += " ";
+    }
+
+    for (var k = i; k >= 1; k--) {
+      str += k + " ";
     }
 
     console.log(str);
   }
 }
 
-// pattern12(4);
-// Pattern-13 ✡✡✡✡✡✡
-// 1          1
-// 12        21
-// 12       321
-// 1234    4321
-// 12345  54321
-// 123456654321
+pattern13(4);
 
 // Pattern-14 ✡✡✡✡✡✡
 
