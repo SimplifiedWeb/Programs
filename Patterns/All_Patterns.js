@@ -254,34 +254,171 @@
 // *
 
 // Approach first
-function pattern11(num) {
-  for (var i = 1; i <= 2 * num - 1; i++) {
+// function pattern11(num) {
+//   for (var i = 1; i <= 2 * num - 1; i++) {
+//     var str = "";
+//     var stars = i;
+//     if (i >= num) stars = 2 * num - i;
+//     for (var j = 1; j <= stars; j++) {
+//       str += " * ";
+//     }
+//     console.log(str);
+//   }
+// }
+
+// // Approach second
+// function pattern11(num) {
+//   for (var i = 0; i < num; i++) {
+//     var str = "";
+//     for (var j = 0; j <= i; j++) {
+//       str += " * ";
+//     }
+//     console.log(str);
+//   }
+//   for (var i = num; i >= 1; i--) {
+//     var str = "";
+//     for (var j = 1; j <= i; j++) {
+//       str += " * ";
+//     }
+//     console.log(str);
+//   }
+// }
+
+// pattern11(4);
+
+// Pattern-12 ✡✡✡✡✡✡
+
+// 1
+// 01
+// 101
+// 0101
+// 10101
+// 010101
+
+function pattern12(num) {
+  for (var i = 65; i < 70; i++) {
     var str = "";
-    var stars = i;
-    if (i >= num) stars = 2 * num - i;
-    for (var j = 1; j <= stars; j++) {
-      str += " * ";
+    for (var j = 65; j <= i; j++) {
+      str += String.fromCharCode(i) + " ";
     }
+
     console.log(str);
   }
 }
 
-// Approach second
-function pattern11(num) {
-  for (var i = 0; i < num; i++) {
-    var str = "";
-    for (var j = 0; j <= i; j++) {
-      str += " * ";
-    }
-    console.log(str);
-  }
-  for (var i = num; i >= 1; i--) {
-    var str = "";
-    for (var j = 1; j <= i; j++) {
-      str += " * ";
-    }
-    console.log(str);
-  }
-}
+// pattern12(4);
+// Pattern-13 ✡✡✡✡✡✡
+// 1          1
+// 12        21
+// 12       321
+// 1234    4321
+// 12345  54321
+// 123456654321
 
-pattern11(4);
+// Pattern-14 ✡✡✡✡✡✡
+
+// 1
+// 2  3
+// 4  5  6
+// 7  8  9  10
+// 11  12  13  14  15
+// 16  17  18  19  20  21
+
+// Pattern-15 ✡✡✡✡✡✡
+// A
+// A B
+// A B C
+// A B C D
+// A B C D E
+// A B C D E F
+
+// Pattern-16 ✡✡✡✡✡✡
+
+// A B C D E F
+// A B C D E
+// A B C D
+// A B C
+// A B
+// A
+
+// Pattern-17 ✡✡✡✡✡✡
+// A
+// B B
+// C C C
+// D D D D
+// E E E E E
+// F F F F F F
+
+// Pattern-18 ✡✡✡✡✡✡
+//      A
+//     ABA
+//    ABCBA
+//   ABCDCBA
+//  ABCDEDCBA
+// ABCDEFEDCBA
+// Pattern-19 ✡✡✡✡✡✡
+// F
+// E F
+// D E F
+// C D E F
+// B C D E F
+// A B C D E F
+// Pattern-20 ✡✡✡✡✡✡
+// ************
+// *****  *****
+// ****    ****
+// ***      ***
+// **        **
+// *          *
+// *          *
+// **        **
+// ***      ***
+// ****    ****
+// *****  *****
+// ************
+// Pattern-21 ✡✡✡✡✡✡
+// *          *
+// **        **
+// ***      ***
+// ****    ****
+// *****  *****
+// ************
+// *****  *****
+// ****    ****
+// ***      ***
+// **        **
+// *          *
+// Pattern-22 ✡✡✡✡✡✡
+// ******
+// *    *
+// *    *
+// *    *
+// *    *
+// ******
+
+// Pattern-23 ✡✡✡✡✡✡
+// 6 6 6 6 6 6 6 6 6 6 6
+// 6 5 5 5 5 5 5 5 5 5 6
+// 6 5 4 4 4 4 4 4 4 5 6
+// 6 5 4 3 3 3 3 3 4 5 6
+// 6 5 4 3 2 2 2 3 4 5 6
+// 6 5 4 3 2 1 2 3 4 5 6
+// 6 5 4 3 2 2 2 3 4 5 6
+// 6 5 4 3 3 3 3 3 4 5 6
+// 6 5 4 4 4 4 4 4 4 5 6
+// 6 5 5 5 5 5 5 5 5 5 6
+// 6 6 6 6 6 6 6 6 6 6 6
+
+// Pattern-24 ✡✡✡✡✡✡
+//     1
+//    1 1
+//   1 2 1
+//  1 3 3 1
+// 1 4 6 4 1
+
+// Pattern-25 ✡✡✡✡✡✡
+
+// ******
+// *    *
+// *    *
+// ******
