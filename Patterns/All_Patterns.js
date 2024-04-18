@@ -491,49 +491,49 @@
 // *****  *****
 // ************
 
-function pattern19(num) {
-  // Upper Half
+// function pattern19(num) {
+//   // Upper Half
 
-  for (var i = 1; i <= num; i++) {
-    var str = "";
+//   for (var i = 1; i <= num; i++) {
+//     var str = "";
 
-    for (var j = num; j >= i; j--) {
-      str += "*";
-    }
+//     for (var j = num; j >= i; j--) {
+//       str += "*";
+//     }
 
-    for (var k = 1; k < 2 * i - 1; k++) {
-      str += " ";
-    }
+//     for (var k = 1; k < 2 * i - 1; k++) {
+//       str += " ";
+//     }
 
-    for (var j = num; j >= i; j--) {
-      str += "*";
-    }
+//     for (var j = num; j >= i; j--) {
+//       str += "*";
+//     }
 
-    console.log(str);
-  }
+//     console.log(str);
+//   }
 
-  // Lower Half
+//   // Lower Half
 
-  for (var i = 1; i <= num; i++) {
-    var str = "";
+//   for (var i = 1; i <= num; i++) {
+//     var str = "";
 
-    for (var j = 1; j <= i; j++) {
-      str += "*";
-    }
+//     for (var j = 1; j <= i; j++) {
+//       str += "*";
+//     }
 
-    for (var k = 1; k <= 2 * num - 2 * i; k++) {
-      str += " ";
-    }
+//     for (var k = 1; k <= 2 * num - 2 * i; k++) {
+//       str += " ";
+//     }
 
-    for (var j = i; j >= 1; j--) {
-      str += "*";
-    }
+//     for (var j = i; j >= 1; j--) {
+//       str += "*";
+//     }
 
-    console.log(str);
-  }
-}
+//     console.log(str);
+//   }
+// }
 
-pattern19(5);
+// pattern19(5);
 
 // Pattern-21 ✡✡✡✡✡✡
 // *          *
@@ -547,6 +547,32 @@ pattern19(5);
 // ***      ***
 // **        **
 // *          *
+
+function pattern21(num) {
+  var spaces = 2 * num - 2;
+  for (var i = 1; i <= 2 * num - 1; i++) {
+    var str = "";
+    var stars = i;
+    if (i > num) stars = 2 * num - i;
+
+    for (var j = 1; j <= stars; j++) {
+      str += "*";
+    }
+
+    for (var k = 1; k <= spaces; k++) {
+      str += " ";
+    }
+
+    for (var j = 1; j <= stars; j++) {
+      str += "*";
+    }
+    console.log(str);
+    if (i < num) spaces -= 2;
+    else spaces += 2;
+  }
+}
+pattern21(5);
+
 // Pattern-22 ✡✡✡✡✡✡
 // ******
 // *    *
