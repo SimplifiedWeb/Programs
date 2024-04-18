@@ -394,18 +394,18 @@
 // A B
 // A
 
-function pattern16(num) {
-  for (var i = 70; i >= 65; i--) {
-    var str = "";
+// function pattern16(num) {
+//   for (var i = 70; i >= 65; i--) {
+//     var str = "";
 
-    for (k = 65; k <= i; k++) {
-      str += String.fromCharCode(k) + " ";
-    }
-    console.log(str);
-  }
-}
+//     for (k = 65; k <= i; k++) {
+//       str += String.fromCharCode(k) + " ";
+//     }
+//     console.log(str);
+//   }
+// }
 
-pattern16(4);
+// pattern16(4);
 
 // Pattern-17 ✡✡✡✡✡✡
 // A
@@ -414,6 +414,19 @@ pattern16(4);
 // D D D D
 // E E E E E
 // F F F F F F
+
+function pattern17(num) {
+  for (var i = 65; i <= 70; i++) {
+    var str = "";
+
+    for (var k = 65; k <= i; k++) {
+      str += String.fromCharCode(i) + " ";
+    }
+
+    console.log(str);
+  }
+}
+pattern17(4);
 
 // Pattern-18 ✡✡✡✡✡✡
 //      A
