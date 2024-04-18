@@ -548,30 +548,30 @@
 // **        **
 // *          *
 
-function pattern21(num) {
-  var spaces = 2 * num - 2;
-  for (var i = 1; i <= 2 * num - 1; i++) {
-    var str = "";
-    var stars = i;
-    if (i > num) stars = 2 * num - i;
+// function pattern21(num) {
+//   var spaces = 2 * num - 2;
+//   for (var i = 1; i <= 2 * num - 1; i++) {
+//     var str = "";
+//     var stars = i;
+//     if (i > num) stars = 2 * num - i;
 
-    for (var j = 1; j <= stars; j++) {
-      str += "*";
-    }
+//     for (var j = 1; j <= stars; j++) {
+//       str += "*";
+//     }
 
-    for (var k = 1; k <= spaces; k++) {
-      str += " ";
-    }
+//     for (var k = 1; k <= spaces; k++) {
+//       str += " ";
+//     }
 
-    for (var j = 1; j <= stars; j++) {
-      str += "*";
-    }
-    console.log(str);
-    if (i < num) spaces -= 2;
-    else spaces += 2;
-  }
-}
-pattern21(5);
+//     for (var j = 1; j <= stars; j++) {
+//       str += "*";
+//     }
+//     console.log(str);
+//     if (i < num) spaces -= 2;
+//     else spaces += 2;
+//   }
+// }
+// pattern21(5);
 
 // Pattern-22 ✡✡✡✡✡✡
 // ******
@@ -580,6 +580,22 @@ pattern21(5);
 // *    *
 // *    *
 // ******
+
+function pattern22(num) {
+  for (var i = 0; i < num; i++) {
+    var str = "";
+    for (var j = 0; j < num; j++) {
+      if (i == 0 || j == 0 || i == num - 1 || j === num - 1) {
+        str += "*";
+      } else {
+        str += " ";
+      }
+    }
+    console.log(str);
+  }
+}
+
+pattern22(4);
 
 // Pattern-23 ✡✡✡✡✡✡
 // 6 6 6 6 6 6 6 6 6 6 6
