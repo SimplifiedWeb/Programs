@@ -315,30 +315,30 @@
 // 12345  54321
 // 123456654321
 
-function pattern13(num) {
-  for (var i = 1; i <= num; i++) {
-    var str = "";
-    // solving tons of equations and simple maths to calculate numbers you can easily do this. By making you'r own formula.
-    var spaces = 2 * (2 * num - 2 * i);
+// function pattern13(num) {
+//   for (var i = 1; i <= num; i++) {
+//     var str = "";
+//     // solving tons of equations and simple maths to calculate numbers you can easily do this. By making you'r own formula.
+//     var spaces = 2 * (2 * num - 2 * i);
 
-    for (var k = 1; k <= i; k++) {
-      str += k + " ";
-    }
+//     for (var k = 1; k <= i; k++) {
+//       str += k + " ";
+//     }
 
-    // Spaces
-    for (var j = 1; j <= spaces; j++) {
-      str += " ";
-    }
+//     // Spaces
+//     for (var j = 1; j <= spaces; j++) {
+//       str += " ";
+//     }
 
-    for (var k = i; k >= 1; k--) {
-      str += k + " ";
-    }
+//     for (var k = i; k >= 1; k--) {
+//       str += k + " ";
+//     }
 
-    console.log(str);
-  }
-}
+//     console.log(str);
+//   }
+// }
 
-pattern13(4);
+// pattern13(4);
 
 // Pattern-14 ✡✡✡✡✡✡
 
@@ -349,6 +349,20 @@ pattern13(4);
 // 11  12  13  14  15
 // 16  17  18  19  20  21
 
+function pattern14(num) {
+  let count = 1;
+  for (let i = 1; i <= num; i++) {
+    let str = "";
+    for (let j = 1; j <= i; j++) {
+      str += count + " ";
+      count++;
+    }
+    console.log(str);
+  }
+}
+
+pattern14(4);
+
 // Pattern-15 ✡✡✡✡✡✡
 // A
 // A B
@@ -356,7 +370,6 @@ pattern13(4);
 // A B C D
 // A B C D E
 // A B C D E F
-
 // Pattern-16 ✡✡✡✡✡✡
 
 // A B C D E F
