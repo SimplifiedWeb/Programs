@@ -140,7 +140,24 @@
 
 // factorial(4);
 
+// How you get the all the factors of a given number in an array 👨‍💻 👨‍💻 👨‍💻 👨‍💻 👨‍💻 👨‍💻
+
+// function getAllFactors(num) {
+//   var result = [];
+//   for (var i = 1; i <= num; i++) {
+//     if (num % i === 0) {
+//       result.push(i);
+//     }
+//   }
+
+//   console.log(result);
+// }
+
+// getAllFactors(6);
+
 // Prime Digits
+// Prime number are numbers that are exactly divides by 1 and itself they  are called as prime numbers.
+
 // GCD / HCF Digits
 // Perfect Number by Digits
 // Fibonacci Digits
