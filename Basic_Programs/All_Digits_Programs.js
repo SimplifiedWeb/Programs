@@ -477,6 +477,40 @@
 // console.log(gcd(12, 25));
 
 // Perfect Number by Digits
+// After getting the Factors of a number, we need to sum it and if we got the exactly the same number of the factor then we can say that it is a perfect number.
+
+// function calcFactor(num) {
+//   var sum = 0;
+//   var result = [];
+//   for (var i = 1; i <= num; i++) {
+//     if (num % i === 0 && num !== i) {
+//       sum = sum + i;
+//       result.push(i);
+//     }
+//   }
+//   console.log(sum);
+//   console.log(result);
+// }
+
+// function calcFactor(num) {
+//   var sum = 0;
+//   var result = [];
+//   for (var i = 1; i * i <= num; i++) {
+//     if (num % i === 0 && i !== num) {
+//       sum += i;
+//       result.push(i);
+//       if (num / i !== i && num / i !== num) {
+//         sum += num / i;
+//         result.push(num / i);
+//       }
+//     }
+//   }
+//   console.log("Sum:", sum);
+//   console.log("Factors:", result);
+// }
+
+// calcFactor(6);
+
 // Fibonacci Digits
 // Happy Number by Digits
 // First n natural Number by Digits
