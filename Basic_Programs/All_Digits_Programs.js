@@ -156,8 +156,168 @@
 // getAllFactors(6);
 
 // Prime Digits
-// Prime number are numbers that are exactly divides by 1 and itself they  are called as prime numbers.
+//  - Check For Prime
 
+// function checkForPrime(num) {
+//   for (var i = 2; i <= num; i++) {
+//     if (num % i === 0) {
+//       console.log("It is a prime number ", i);
+//     }
+//   }
+// }
+// checkForPrime(7);
+
+//  - Print all the nth Prime
+
+// function checkForPrime(num) {
+//   if (num === 2) return true;
+//   if (num % 2 === 0) return false;
+
+//   for (var k = 3; k * k <= num; k += 2) {
+//     if (num % k === 0) {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
+
+// function nthPrime(num) {
+//   var result = [];
+//   for (var i = 2; i <= num; i++) {
+//     if (checkForPrime(i)) {
+//       result.push(i);
+//     }
+//   }
+//   console.log(result);
+// }
+// nthPrime(20);
+
+//  - Print Prime Factors
+
+// function printPrimeFactors(num) {
+//   var results = [];
+
+//   while (num % 2 === 0) {
+//     results.push(2);
+//     num = num / 2;
+//   }
+
+//   for (var i = 3; i * i <= num; i += 2) {
+//     if (num % i === 0) {
+//       results.push(i);
+//       num = num / i;
+//     }
+//   }
+//   if (num > 2) {
+//     results.push(num);
+//   }
+
+//   console.log(results);
+// }
+// printPrimeFactors(28);
+
+//  - Count Prime in a range [a, b]
+
+// function checkForPrime(num) {
+//   if (num === 2) return true;
+//   if (num <= 1) return false;
+//   // prime numbers are divisible by itself and 1, Not by 2 or any even numbers.
+//   if (num % 2 === 0) return false;
+
+//   for (var k = 3; k * k <= num; k += 2) {
+//     if (num % k === 0) {
+//       // 15 => 3 x 5 = 15
+//       // sure it is odd number but it has more then 2 factors so it is not a prime number
+//       return false;
+//     }
+//   }
+
+//   return true;
+// }
+// function checkForPrimeRange(a, b) {
+//   var results = [];
+//   var count = 0;
+//   for (var i = a; i <= b; i++) {
+//     if (checkForPrime(i)) {
+//       results.push(i);
+//       count++;
+//     }
+//   }
+//   console.log(results);
+//   console.log(count);
+// }
+
+// checkForPrimeRange(10, 20);
+
+//  - Sum of Prime
+
+// function checkForPrime(n) {
+//   if (n % 2 === 0) return false;
+
+//   for (var k = 3; k * k <= n; k += 2) {
+//     if (n % k === 0) {
+//       return false;
+//     }
+//   }
+
+//   return true;
+// }
+
+// function sumOfPrime(num) {
+//   var sum = 0;
+//   var result = [];
+//   for (var i = 2; i <= num; i++) {
+//     if (checkForPrime(i)) {
+//       result.push(i);
+//       sum = sum + i;
+//     }
+//   }
+//   console.log(result);
+//   console.log(sum);
+// }
+// sumOfPrime(10);
+
+//  - Twin Prime
+
+// function checkForTwinPair(num) {
+//   if (num === 2) return true;
+//   if (num % 2 === 0) return false;
+
+//   for (var k = 3; k * k <= num; k++) {
+//     if (num % k === 0) return false;
+//   }
+
+//   return true;
+// }
+
+// function twinPair(n) {
+//   var result = [];
+//   var twinResult = [];
+//   var count = 0;
+//   var sum = 0;
+//   for (var i = 2; i <= n; i++) {
+//     if (checkForTwinPair(i)) {
+//       result.push(i);
+//       sum = sum + i;
+//       count++;
+//     }
+//   }
+
+//   for (var j = 1; j <= result.length; j++) {
+//     if (result[j + 1] - result[j] === 2) {
+//       twinResult.push([result[j], result[j + 1]]);
+//     }
+//   }
+
+//   console.log("All Prime ", result);
+//   console.log("Twin Prime ", twinResult);
+//   console.log("Sum of All Prime ", sum);
+//   console.log("Range of Prime ", count);
+// }
+// twinPair(10);
+
+//  - Circular Prime
+// Prime number are numbers that are exactly divides by 1 and itself they  are called as prime numbers.
 // GCD / HCF Digits
 // Perfect Number by Digits
 // Fibonacci Digits
