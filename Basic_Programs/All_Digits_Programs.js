@@ -144,30 +144,39 @@
 
 // function getAllFactors(num) {
 //   var result = [];
-//   for (var i = 1; i <= num; i++) {
+//   for (var i = 1; i * i <= num; i++) {
 //     if (num % i === 0) {
 //       result.push(i);
+//       if (num / i !== i) {
+//         result.push(num / i);
+//       }
 //     }
 //   }
 
-//   console.log(result);
+//   console.log(result.sort((a, b) => a - b));
 // }
 
-// getAllFactors(6);
+// getAllFactors(36);
 
-// Prime Digits
+// Prime Digits  👨‍💻 👨‍💻 👨‍💻 👨‍💻 👨‍💻 👨‍💻
 //  - Check For Prime
 
 // function checkForPrime(num) {
-//   for (var i = 2; i <= num; i++) {
+//   var counter = 0;
+//   for (var i = 1; i * i <= num; i++) {
 //     if (num % i === 0) {
-//       console.log("It is a prime number ", i);
+//       counter++;
+//       if (num / i !== i) {
+//         counter++;
+//       }
 //     }
 //   }
+//   if (counter === 2) console.log("It is prime");
+//   else console.log("It is not prime");
 // }
-// checkForPrime(7);
+// checkForPrime(8);
 
-//  - Print all the nth Prime
+//  - Print all the nth Prime  👨‍💻 👨‍💻 👨‍💻 👨‍💻 👨‍💻 👨‍💻
 
 // function checkForPrime(num) {
 //   if (num === 2) return true;
@@ -192,7 +201,7 @@
 // }
 // nthPrime(20);
 
-//  - Print Prime Factors
+//  - Print Prime Factors  👨‍💻 👨‍💻 👨‍💻 👨‍💻 👨‍💻 👨‍💻
 
 // function printPrimeFactors(num) {
 //   var results = [];
@@ -216,7 +225,7 @@
 // }
 // printPrimeFactors(28);
 
-//  - Count Prime in a range [a, b]
+//  - Count Prime in a range [a, b]  👨‍💻 👨‍💻 👨‍💻 👨‍💻 👨‍💻 👨‍💻
 
 // function checkForPrime(num) {
 //   if (num === 2) return true;
@@ -249,7 +258,7 @@
 
 // checkForPrimeRange(10, 20);
 
-//  - Sum of Prime
+//  - Sum of Prime   👨‍💻 👨‍💻 👨‍💻 👨‍💻 👨‍💻 👨‍💻
 
 // function checkForPrime(n) {
 //   if (n % 2 === 0) return false;
@@ -277,7 +286,7 @@
 // }
 // sumOfPrime(10);
 
-//  - Twin Prime
+//  - Twin Prime   👨‍💻 👨‍💻 👨‍💻 👨‍💻 👨‍💻 👨‍💻
 
 // function checkForTwinPair(num) {
 //   if (num === 2) return true;
@@ -316,9 +325,142 @@
 // }
 // twinPair(10);
 
-//  - Circular Prime
-// Prime number are numbers that are exactly divides by 1 and itself they  are called as prime numbers.
-// GCD / HCF Digits
+// GCD / HCF Digits   👨‍💻 👨‍💻 👨‍💻 👨‍💻 👨‍💻 👨‍💻
+
+// Greatest common division, it takes two inputs then calculate the factors and then get the common factors and whichever the highest factor will be the GCD
+
+// - Finding GCD
+// function gcd(n1, n2) {
+//   var gcd = 0;
+
+//   for (var i = 1; i <= Math.min(n1, n2); i++) {
+//     if (n1 % i === 0 && n2 % i === 0) {
+//       gcd = i;
+//     }
+//   }
+
+//   console.log(gcd);
+// }
+
+// gcd(12, 24); // O(n)
+
+// We can use the Euclidean Algorithm to make it efficient for larger inputs
+// function gcd(a, b) {
+//   // Euclidean algorithm states
+//   // gcd(a,b) = gcd (a-b, b)
+//   // But in the code we use % to get the exact data what we get when we done subtraction in formula
+//   // where a is greater then b. a > b
+//   while (a > 0 && b > 0) {
+//     if (a > b) {
+//       a = a % b;
+//     } else {
+//       b = b % a;
+//     }
+//   }
+
+//   if (a === 0) return b;
+//   else return a;
+// }
+
+// console.log(gcd(9, 12));
+
+// Finding GCD for Multiple numbers or Given an array of numbers, Find the GCD of the Entire array.
+
+// function factorOfNumber(a, b) {
+//   while (a > 0 && b > 0) {
+//     if (a > b) a = a % b;
+//     else b = b % a;
+
+//     if (a === 0) return b;
+//     return a;
+//   }
+// }
+
+// const array = [35, 21, 15, 9];
+
+// function gcdForMultiple(array) {
+//   if (array.length <= 2) {
+//     console.log("At-least two elements to find GCD");
+//   }
+
+//   var currentValue = factorOfNumber(array[0], array[1]);
+
+//   for (var i = 2; i < array.length; i++) {
+//     currentValue = factorOfNumber(currentValue, array[i]);
+//   }
+
+//   console.log(currentValue);
+// }
+
+// gcdForMultiple(array);
+
+// Find GCD of all number from 1 to n
+
+// function findGCD(a, b) {
+//   while (a > 0 || b > 0) {
+//     // Euclidean algorithm
+//     if (a > b) a = a % b;
+//     else b = b % a;
+
+//     if (a === 0) return b;
+//     return a;
+//   }
+// }
+// In this we get always 1 bcz 1,2,3,4,5,6,7,8 they have only 1 common factors in between them, They always be going to be 1.
+// function nthGCD(num) {
+//   var result = 1;
+//   for (var i = 1; i < num; i++) {
+//     result = findGCD(result, i);
+//     if (result === 1) {
+//       break;
+//     }
+//   }
+//   console.log(result);
+// }
+// nthGCD(12);
+
+// Finding Common Factor using GCD
+
+// function commonFactor(a, b) {
+//   // formula a > b = (a % b) b > a = (b % a)
+//   // internally when we calculate by maths -> a > b = gcd (a - b, b)
+//   // if b > a (b - a, a) like this and once we calculate everything like subtract and we get one of the value 0 we can say that the another number is gcd,
+
+//   // So in this calculation in code, there is  intermediate steps happening like on each iteration we get the half value directly the way we get the value after subtracting the value in math.
+//   // For example 10 % 5 => 0 there is not intermediate steps, a > b -> (a - b, b) 10 - 5 => (5, 5) => (5-5, 5) => (0, 5)-> this is getting directly by %.
+//   while (a > 0 && b > 0) {
+//     if (a > b) a = a % b;
+//     else b = b % a;
+
+//     if (a === 0) return b;
+//     return a;
+//   }
+// }
+// var arr = [28, 19, 34, 12];
+
+// function gcd(arr) {
+//   var result = [];
+//   let currentValue = commonFactor(arr[0], arr[1]);
+//   for (var i = 2; i < arr.length; i++) {
+//     currentValue = commonFactor(currentValue, arr[i]);
+//   }
+//   console.log(currentValue);
+//   for (var i = 1; i * i <= currentValue; i++) {
+//     if (currentValue % i === 0) {
+//       result.push(i);
+//       if (currentValue / i !== i) {
+//         result.push(currentValue / i);
+//       }
+//     }
+//   }
+//   console.log(result);
+// }
+// gcd(arr);
+
+// Checking Congruence using GCD
+// Determine if Numbers are Coprime using GCD
+// Given Two Fraction, Find GCD for numerator and denominators
+
 // Perfect Number by Digits
 // Fibonacci Digits
 // Happy Number by Digits
