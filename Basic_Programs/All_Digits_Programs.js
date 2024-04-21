@@ -419,7 +419,7 @@
 // }
 // nthGCD(12);
 
-// Finding Common Factor using GCD
+// Given Two Fraction, Find GCD for numerator and denominators or Finding Common Factor using GCD
 
 // function commonFactor(a, b) {
 //   // formula a > b = (a % b) b > a = (b % a)
@@ -457,9 +457,24 @@
 // }
 // gcd(arr);
 
-// Checking Congruence using GCD
 // Determine if Numbers are Coprime using GCD
-// Given Two Fraction, Find GCD for numerator and denominators
+// Co-Prime ek aisa number hota hai jo sirf khud se hee divide hota hai independent hota hai, uska koi bhi common factor nhi hota uska GCD hamesha 1 hota hai. 8 and 15 => 1;
+
+// function calcGCD(a, b) {
+//   while (a > 0 && b > 0) {
+//     if (a > b) {
+//       a = a % b;
+//     } else {
+//       b = b % a;
+//     }
+//   }
+//   return a > 0 ? a : b;
+// }
+
+// function gcd(n1, n2) {
+//   return calcGCD(n1, n2) === 1;
+// }
+// console.log(gcd(12, 25));
 
 // Perfect Number by Digits
 // Fibonacci Digits
