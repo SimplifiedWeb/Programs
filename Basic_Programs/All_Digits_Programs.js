@@ -82,9 +82,7 @@
 //   var result = 0;
 //   while (num > 0) {
 //     var digit = num % 10;
-
 //     result = result + Math.pow(digit, 3);
-
 //     num = Math.floor(num / 10);
 //   }
 //   if (result == org) {
@@ -202,7 +200,8 @@
 // nthPrime(20);
 
 //  - Print Prime Factors  👨‍💻 👨‍💻 👨‍💻 👨‍💻 👨‍💻 👨‍💻
-
+// Ismai jo loop hai wo prime number ke factor ko dhond rha hai, from the smallest prime which is 2 means (even) and then after that 3 (odd)
+// Prime factors mai ham koi sa bhi number as a input dete hai aur usko as a prime mai todte hai smallest 2 se then after 3 se means even and then odd.
 // function printPrimeFactors(num) {
 //   var results = [];
 
@@ -348,7 +347,7 @@
 // function gcd(a, b) {
 //   // Euclidean algorithm states
 //   // gcd(a,b) = gcd (a-b, b)
-//   // But in the code we use % to get the exact data what we get when we done subtraction in formula
+//   // But in the code we use % to get the exact data, what we get when we done subtraction in formula
 //   // where a is greater then b. a > b
 //   while (a > 0 && b > 0) {
 //     if (a > b) {
@@ -397,7 +396,7 @@
 // Find GCD of all number from 1 to n
 
 // function findGCD(a, b) {
-//   while (a > 0 || b > 0) {
+//   while (a > 0 && b > 0) {
 //     // Euclidean algorithm
 //     if (a > b) a = a % b;
 //     else b = b % a;
@@ -436,7 +435,7 @@
 //     return a;
 //   }
 // }
-// var arr = [28, 19, 34, 12];
+// var arr = [28, 19, 34, 12]; // we get the gcd of this and after getting that we take out the factor of that result gcd.
 
 // function gcd(arr) {
 //   var result = [];
@@ -477,8 +476,9 @@
 // console.log(gcd(12, 25));
 
 // Perfect Number by Digits
-// After getting the Factors of a number, we need to sum it and if we got the exactly the same number of the factor then we can say that it is a perfect number.
+// After getting the Factors of a number, we need to sum it and if we got the exactly the same number after sum, then we can say that it is a perfect number.
 
+// First Approach
 // function calcFactor(num) {
 //   var sum = 0;
 //   var result = [];
@@ -492,6 +492,7 @@
 //   console.log(result);
 // }
 
+// Efficient Approach
 // function calcFactor(num) {
 //   var sum = 0;
 //   var result = [];
@@ -511,8 +512,97 @@
 
 // calcFactor(6);
 
-// Fibonacci Digits
+// Fibonacci Digit
+
+// function fib(num) {
+//   var a = 0,
+//     b = 1;
+//   var result = [a, b];
+//   for (var i = 2; i < num; i++) {
+//     const next = a + b;
+//     result.push(next);
+//     a = b;
+//     b = next;
+//   }
+//   console.log(result);
+// }
+// fib(10);
+
 // Happy Number by Digits
+// As a input single digit dete hai, and then usko two digit mai seprate karte hai and then usko square and sum karke jo result aya usse two digit mai seprate karte hai, aisa karte jaate hai jab tak result 1 na ajy and result 1 ata hai wo happy number hai ya phir unhappy number.
+
+// function extractDigit(n) {
+//   var sum = 0;
+//   while (n > 0) {
+//     var digit = n % 10;
+//     sum += Math.pow(digit, 2);
+//     n = Math.floor(n / 10);
+//   }
+//   return sum;
+// }
+
+// function happyNumber(n) {
+//   var seen = new Set();
+
+//   while (n !== 1) {
+//     n = extractDigit(n);
+
+//     if (seen.has(n)) {
+//       return false;
+//     }
+
+//     seen.add(n);
+//   }
+//   console.log(seen);
+//   return true;
+// }
+
+// console.log(happyNumber(19));
+// console.log(happyNumber(2));
+
+// For nth term finding Happy number
+
+// function extractDigits(n) {
+//   var sum = 0;
+//   while (n > 0) {
+//     var digit = n % 10;
+//     sum += digit * digit;
+//     n = Math.floor(n / 10);
+//   }
+//   return sum;
+// }
+
+// function isHappy(n) {
+//   var seen = new Set();
+
+//   while (n !== 1) {
+//     n = extractDigits(n);
+
+//     if (seen.has(n)) {
+//       return false;
+//     }
+
+//     seen.add(n);
+//   }
+//   console.log(seen);
+//   return true;
+// }
+
+// function nthHappyNumber(n) {
+//   var happyNumber = [];
+//   var num = 1;
+
+//   while (happyNumber.length < n) {
+//     if (isHappy(num)) {
+//       happyNumber.push(num);
+//     }
+//     num++;
+//   }
+//   console.log(happyNumber);
+// }
+
+// nthHappyNumber(50);
+
 // First n natural Number by Digits
 // Strong number by Digits
 // HarShad Number by Digits
