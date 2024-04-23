@@ -745,6 +745,30 @@
 // harShad(100);
 
 // Sum of Proper Divisor by digits
+
+// we need take out all the factors of a given number and exclude that particular number and sum it.
+
+// function properDiv(num) {
+//   var sum = 0;
+//   var result = [];
+
+//   for (var i = 1; i * i <= num; i++) {
+//     if (num % i === 0 && i !== num) {
+//       sum = sum + i;
+//       result.push(i);
+
+//       if (num / i !== i && num / i !== num) {
+//         sum = sum + num / i;
+//         result.push(num / i);
+//       }
+//     }
+//   }
+//   console.log(sum);
+//   console.log(result);
+// }
+
+// properDiv(28);
+
 // Number of Trailing zeros in the factorial
 
 // Function to calculate the sum of the digits of a number
