@@ -610,6 +610,24 @@
 // 6 5 5 5 5 5 5 5 5 5 6
 // 6 6 6 6 6 6 6 6 6 6 6
 
+// function pattern23(num) {
+//   for (var i = num; i >= 1; i--) {
+//     var str = "";
+//     for (var j = num; j >= 1; j--) {
+//       if (i === 1 || i === num || j === 1 || j === num) {
+//         str += num + " ";
+//       } else {
+//         // str += num - i + 1
+//         str += i + " ";
+//       }
+//     }
+
+//     console.log(str);
+//   }
+// }
+
+// pattern23(7);
+
 // Pattern-25 ✡✡✡✡✡✡
 
 // ******

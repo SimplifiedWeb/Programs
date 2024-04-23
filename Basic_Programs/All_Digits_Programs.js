@@ -348,7 +348,7 @@
 
 // gcd(12, 24); // O(n)
 
-// We can use the Euclidean Algorithm to make it efficient for larger inputs
+// We can use the Euclidean Algorithm to make it efficient for larger inputs 👨‍💻 👨‍💻 👨‍💻 👨‍💻 👨‍💻 👨‍💻
 // function gcd(a, b) {
 //   // Euclidean algorithm states
 //   // gcd(a,b) = gcd (a-b, b)
@@ -368,7 +368,7 @@
 
 // console.log(gcd(9, 12));
 
-// Finding GCD for Multiple numbers or Given an array of numbers, Find the GCD of the Entire array.
+// Finding GCD for Multiple numbers or Given an array of numbers, Find the GCD of the Entire array. 👨‍💻 👨‍💻 👨‍💻 👨‍💻 👨‍💻 👨‍💻
 
 // function factorOfNumber(a, b) {
 //   while (a > 0 && b > 0) {
