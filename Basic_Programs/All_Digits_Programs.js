@@ -769,6 +769,21 @@
 
 // properDiv(28);
 
-// Number of Trailing zeros in the factorial
+// count the Number of Trailing zeros in the factorial
 
-// Function to calculate the sum of the digits of a number
+// 10 is the number that gives the trailing zeros and its factors are 2 and 5 to get the 10.
+// So we take 5 as a factors and take out all the powers of 5 in the given input.
+// Take out the quotient after dividing the n input with i.
+
+// 5-> 1 count, 10 => 2 count, 15 -> 3 count, 20 => 4 count this is an example.
+
+// function trailingZeros(num) {
+//   var count = 0;
+
+//   for (var i = 5; i <= num; i *= 5) {
+//     count += Math.floor(num / i);
+//   }
+//   console.log(count);
+// }
+
+// trailingZeros(50);
