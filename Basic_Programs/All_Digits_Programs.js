@@ -10,6 +10,10 @@
 // }
 
 // countDigits(12345);
+
+// console.log(123 % 10)
+// console.log(Math.floor(123 / 10));
+
 // Extract the Digits  👨‍💻 👨‍💻 👨‍💻 👨‍💻 👨‍💻 👨‍💻
 
 // function extractDigits(num) {
@@ -208,6 +212,7 @@
 //   while (num % 2 === 0) {
 //     results.push(2);
 //     num = num / 2;
+
 //   }
 
 //   for (var i = 3; i * i <= num; i += 2) {
@@ -443,12 +448,15 @@
 //   for (var i = 2; i < arr.length; i++) {
 //     currentValue = commonFactor(currentValue, arr[i]);
 //   }
+
+// We dont need to go above the Square of a number so that is why we use the square root stuff in finding factors and using the n/i
+
 //   console.log(currentValue);
-//   for (var i = 1; i * i <= currentValue; i++) {
+//   fo r (var i = 1; i * i <= currentValue; i++) {
 //     if (currentValue % i === 0) {
 //       result.push(i);
 //       if (currentValue / i !== i) {
-//         result.push(currentValue / i);
+//        result.push(currentValue / i);
 //       }
 //     }
 //   }
@@ -498,7 +506,7 @@
 //   var result = [];
 //   for (var i = 1; i * i <= num; i++) {
 //     if (num % i === 0 && i !== num) {
-//       sum += i;
+//       sum = sum +  i;
 //       result.push(i);
 //       if (num / i !== i && num / i !== num) {
 //         sum += num / i;
@@ -541,6 +549,12 @@
 //   return sum;
 // }
 
+// sum => 18 => [18] => 18 =>
+
+// when happy number get into cycle again after doing multiple sum steps we get the same values again so we are checking that does we already have that value inside the array.
+
+// while (n !== 1) => n = extract(n)  => if(arr.includes(n)) => return false if not => arr.push(n) => run again do until it either find the value inside the array and give false or it gives 1 that's it.
+
 // function happyNumber(n) {
 //   var seen = new Set();
 
@@ -561,6 +575,11 @@
 // console.log(happyNumber(2));
 
 // For nth term finding Happy number
+
+// There is a function who do the extractions and give the result.
+// There is a function who check do this sum is 1 then it is a happy number return true else return false or we check the cycle by storing each sum and if we seen that it is been in cycle again then we return false.
+
+// There is a function who run and send the number each time. from 1 to n, and if the check function return true we add the value inside the result or else we go for the next value.
 
 // function extractDigits(n) {
 //   var sum = 0;
@@ -593,18 +612,139 @@
 //   var num = 1;
 
 //   while (happyNumber.length < n) {
-//     if (isHappy(num)) {
+//     if (isHappy(num)c) {
 //       happyNumber.push(num);
 //     }
 //     num++;
 //   }
 //   console.log(happyNumber);
 // }
-
 // nthHappyNumber(50);
 
 // First n natural Number by Digits
+
+// function naturalNumber(n) {
+//   for (var i = 1; i <= n; i++) {
+//     console.log(i);
+//   }
+// }
+// naturalNumber(10);
+
 // Strong number by Digits
+// Strong numbers are referred to as Factorials, Which means when we seprate each digit and then we take a factorial of each digit and then after that sum all that digit if we get the same number then we can say that it is a strong number.
+
+// function calculateFactorial(n) {
+//   var fact = 1;
+
+//   for (var i = 1; i <= n; i++) {
+//     fact = fact * i;
+//   }
+
+//   return fact;
+// }
+// const factorialCache = (function () {
+//   const cache = [];
+//   for (let i = 0; i <= 9; i++) {
+//     cache[i] = calculateFactorial(i);
+//   }
+//   return cache;
+// })();
+
+// function extractDigit(num) {
+//   var sum = 0;
+
+//   while (num > 0) {
+//     var digit = num % 10;
+
+//     sum = sum + factorialCache[digit];
+
+//     num = Math.floor(num / 10);
+//   }
+
+//   return sum;
+// }
+
+// function strongNumber(num) {
+//   var res = extractDigit(num);
+//   console.log(res);
+//   if (res === num) {
+//     console.log("It is a strong number");
+//   } else {
+//     console.log("It is not a strong number");
+//   }
+// }
+
+// strongNumber(1455);
+
 // HarShad Number by Digits
+// Numbers that we separate digits and then sum it and then module it by that number and if it gets the whole number then it is a harShad number
+// Function to compute the sum of the digits of a number
+// function sumOfDigits(num) {
+//   var sum = 0;
+//   while (num > 0) {
+//     var digit = num % 10;
+//     sum += digit;
+//     num = Math.floor(num / 10);
+//   }
+//   return sum;
+// }
+
+// function isHarshad(num) {
+//   var sum = sumOfDigits(num);
+//   console.log("Sum ", sum, "Num", num);
+//   return num % sum === 0;
+// }
+
+// function harShad(num) {
+//   if (isHarshad(num)) {
+//     console.log("It is a Harshad number");
+//   } else {
+//     console.log("It is not a Harshad number");
+//   }
+// }
+
+// harShad(1729);
+// harShad(11);
+// harShad(21);
+
+// Finding nth Term of HarShad Number
+
+// function extractDigits(num) {
+//   var sum = 0;
+
+//   while (num > 0) {
+//     sum = sum + (num % 10);
+//     num = Math.floor(num / 10);
+//   }
+
+//   return sum;
+// }
+
+// function isHarShad(num) {
+//   var sum = extractDigits(num);
+
+//   return num % sum === 0;
+// }
+
+// function harShad(n) {
+//   var harShadNumbers = [];
+//   var not_harShadNumbers = [];
+
+//   for (var i = 1; i <= n; i++) {
+//     if (isHarShad(i)) {
+//       harShadNumbers.push(i);
+//     } else {
+//       not_harShadNumbers.push(i);
+//     }
+//   }
+
+//   console.log(harShadNumbers);
+//   console.log(not_harShadNumbers);
+// }
+
+// harShad(100);
+
 // Sum of Proper Divisor by digits
 // Number of Trailing zeros in the factorial
+
+// Function to calculate the sum of the digits of a number
