@@ -320,6 +320,8 @@ function palindrome(str, index = 0) {
 // console.log(palindrome("madqm"));
 // ================ Problem 18 End ================================
 
+
+
 // ================ Problem 19 start ================================
 // Fibonacci
 // Not optimized time complexity O(n^2)
@@ -490,8 +492,29 @@ function operations(
 // console.log(operations([20, 43, 432, 349, 432, 34, 9, 0, 0, 2, 34, 73]));
 // ================ Problem 22 End ==============================================
 
+
+
 // ================ Problem 23 start ================
+// Extract, Sum, Count, reverse of Digits
+// simpler version of multiple operations
+function extractDigits(n, count = 0, sum = 0, reverse = 0) {
+	if (n === 0) {
+		return { count, sum, reverse };
+	}
+	console.log(n % 10);
+	count++;
+	sum = sum + (n % 10);
+	reverse = reverse * 10 + (n % 10);
+	n = Math.floor(n / 10);
+
+	return extractDigits(n, count, sum, reverse);
+}
+
+// const result = extractDigits(12345);
+// console.log(result)
 // ================ Problem 23 End ================
+
+
 
 // ================ Problem 24 start ================
 // ================ Problem 24 End ================
