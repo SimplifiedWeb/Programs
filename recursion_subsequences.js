@@ -191,3 +191,123 @@ function subOfSum(arr, target, index = 0, current = [], sum = 0, result = []) {
 // console.log(result);
 
 // ================ Problem 7 End ================================
+
+// ================ Problem 8 Start ================================
+// find the maximum sum and return that pair with sum
+
+let countTheCalculations = 0; // used for checking how much times it gets run
+function maxSum(
+	arr,
+	max = 0,
+	index = 0,
+	result = { sum: 0, pair: [] },
+	pointer = 0
+) {
+	if (index === arr.length) {
+		return;
+	}
+
+	if (arr[pointer] !== arr[index]) {
+		var sum = arr[pointer] + arr[index];
+		countTheCalculations++;
+		if (sum > max) {
+			max = sum;
+			result.pair = [[arr[pointer], arr[index]]];
+			result.sum = sum;
+		}
+	}
+	maxSum(arr, max, index + 1, result, pointer);
+	if (index === pointer) {
+		pointer++;
+		if (pointer === arr.length) {
+			return;
+		}
+
+		index = -1;
+
+		maxSum(arr, max, index + 1, result, pointer);
+	}
+
+	// indeed it provides answer but it's not efficient.
+	// Using an object or something to track the repetition of calculations that give some performance 😃 ,
+	// we can use the Set method to minimize the calculations
+	// 1 + 3 is equivalent to 3 + 1 same for others.
+
+	return result;
+}
+
+// let result = maxSum([1, 3, 2, 4]);
+// console.log(result);
+// console.log(countTheCalculations);
+// ================ Problem 8 End ==================================
+
+// ================ Problem 9 Start ================================
+
+// find the maximum sum and return that pair with sum
+
+let count = 0;
+function maxSum(
+	arr,
+	max = 0,
+	index = 0,
+	result = { sum: 0, pair: [] },
+	pointer = 0,
+	alreadyCalculated = new Set()
+) {
+	if (index === arr.length) {
+		return;
+	}
+
+	let pair = [arr[pointer], arr[index]].sort().toString();
+
+	if (arr[pointer] !== arr[index] && !alreadyCalculated.has(pair)) {
+		var sum = arr[pointer] + arr[index];
+		count++;
+
+		if (sum > max) {
+			max = sum;
+			result.pair = [[arr[pointer], arr[index]]];
+			result.sum = sum;
+		}
+
+		alreadyCalculated.add(pair);
+	}
+	maxSum(arr, max, index + 1, result, pointer, alreadyCalculated);
+	if (index === pointer) {
+		pointer++;
+		if (pointer === arr.length) {
+			return;
+		}
+		index = -1;
+		maxSum(arr, max, index + 1, result, pointer, alreadyCalculated);
+	}
+	return result;
+}
+
+// let result = maxSum([1, 3, 2, 4]);
+// console.log(result);
+// console.log(count);
+
+// ================ Problem 9 End ==================================
+// ================ Problem 10 Start ================================
+// ================ Problem 10 End ==================================
+// ================ Problem 11 Start ================================
+// ================ Problem 11 End ==================================
+// ================ Problem 12 Start ================================
+// ================ Problem 12 End ==================================
+
+// ================ Problem 13 Start ================================
+// ================ Problem 13 End ==================================
+// ================ Problem 14 Start ================================
+// ================ Problem 14 End ==================================
+// ================ Problem 15 Start ================================
+// ================ Problem 15 End ==================================
+// ================ Problem 16 Start ================================
+// ================ Problem 16 End ==================================
+// ================ Problem 17 Start ================================
+// ================ Problem 17 End ==================================
+// ================ Problem 18 Start ================================
+// ================ Problem 18 End ==================================
+// ================ Problem 19 Start ================================
+// ================ Problem 19 End ==================================
+// ================ Problem 20 Start ================================
