@@ -244,7 +244,7 @@ function maxSum(
 // ================ Problem 9 Start ================================
 
 // find the maximum sum and return that pair with sum
-
+// Optimized version
 let count = 0;
 function maxSum(
 	arr,
