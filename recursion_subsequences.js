@@ -290,8 +290,99 @@ function maxSum(
 
 // ================ Problem 9 End ==================================
 // ================ Problem 10 Start ================================
+
+// Find Subsequences with Product Less Than Target: Write a function to find all subsequences of an array where the product of the elements is less than a given target.
+function product(
+	arr,
+	target,
+	index = 0,
+	result = [],
+	current = [],
+	pointer = 0,
+	alreadyCalculated = new Set()
+) {
+	if (index === arr.length) {
+		result.push([arr[index - pointer - 1]]);
+		return;
+	}
+
+	if (arr[index] === 0) return;
+
+	let pair = [arr[pointer], arr[index]].sort().toString();
+	if (
+		arr[index] < target &&
+		arr[pointer] !== arr[index] &&
+		!alreadyCalculated.has(pair)
+	) {
+		let product = arr[pointer] * arr[index];
+		if (Math.abs(product) < 6) {
+			result.push([arr[pointer], arr[index]]);
+			alreadyCalculated.add(pair);
+		}
+	}
+
+	product(arr, target, index + 1, result, current, pointer, alreadyCalculated);
+
+	if (index === pointer) {
+		++pointer;
+		if (pointer === arr.length) {
+			return;
+		}
+
+		index = -1;
+
+		product(
+			arr,
+			target,
+			index + 1,
+			result,
+			current,
+			pointer,
+			alreadyCalculated
+		);
+	}
+	return result;
+}
+
+// let result = product([1, 2, 3, 4], 6);
+// console.log(result);
+
 // ================ Problem 10 End ==================================
 // ================ Problem 11 Start ================================
+// Find Subsequences with Product Less Than Target: Write a function to find all subsequences of an array where the product of the elements is less than a given target.
+// Optimized version
+
+function productCalculation(arr, target, index, current, result) {
+	let currentData = current.reduce((acc, val) => acc * val, 1);
+
+	if (currentData > 0 && currentData < target) {
+		result.push([...current]);
+	}
+
+	if (index === arr.length) return;
+
+	for (let i = index; i < arr.length; i++) {
+		if (current.includes(arr[i])) continue;
+
+		current.push(arr[i]);
+
+		productCalculation(arr, target, i + 1, current, result);
+
+		current.pop();
+	}
+}
+
+function production(arr, target) {
+	let result = [];
+
+	productCalculation(arr, target, 0, [], result);
+
+	return result;
+}
+
+// let result_2 = production([1, 2, 3], 6);
+// console.log(result_2);
+
 // ================ Problem 11 End ==================================
 // ================ Problem 12 Start ================================
 // ================ Problem 12 End ==================================
