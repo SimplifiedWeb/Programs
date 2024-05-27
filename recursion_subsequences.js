@@ -7,7 +7,6 @@
 function printString(str, current = [], subSequences = [], index = 0) {
 	if (index === str.length) {
 		subSequences.push([...current]);
-
 		return;
 	}
 
@@ -352,7 +351,9 @@ function product(
 // Find Subsequences with Product Less Than Target: Write a function to find all subsequences of an array where the product of the elements is less than a given target.
 // Optimized version
 
+let counting = 0;
 function productCalculation(arr, target, index, current, result) {
+	counting++;
 	let currentData = current.reduce((acc, val) => acc * val, 1);
 
 	if (currentData > 0 && currentData < target) {
@@ -382,9 +383,49 @@ function production(arr, target) {
 
 // let result_2 = production([1, 2, 3], 6);
 // console.log(result_2);
+// console.log(counting);
 
 // ================ Problem 11 End ==================================
+
 // ================ Problem 12 Start ================================
+
+// Find Max sum using more optimized way
+function generateSub(arr, index, current, result, maxObj) {
+	if (current.length > 1 && current.length < 3) {
+		let sum = current.reduce((acc, val) => acc + val, 0);
+		if (sum > maxObj.max) {
+			maxObj.max = sum;
+			result.push([...current]);
+		}
+	}
+
+	if (index === arr.length) {
+		return;
+	}
+
+	for (let i = index; i < arr.length; i++) {
+		if (current.includes(arr[i])) continue;
+
+		current.push(arr[i]);
+
+		generateSub(arr, i + 1, current, result, maxObj);
+
+		current.pop();
+	}
+	// return result[result.length - 1];
+	return result;
+}
+
+function practice(arr) {
+	let result = [];
+	let maxObj = { max: 0 };
+	generateSub(arr, 0, [], result, maxObj);
+	return result[result.length - 1];
+}
+
+// let result = practice([3, 1, 2]);
+// console.log(result);
+
 // ================ Problem 12 End ==================================
 
 // ================ Problem 13 Start ================================
