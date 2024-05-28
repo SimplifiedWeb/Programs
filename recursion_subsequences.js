@@ -429,6 +429,40 @@ function practice(arr) {
 // ================ Problem 12 End ==================================
 
 // ================ Problem 13 Start ================================
+
+function distinctElm(arr, index, current, result) {
+	if (current.length > 1) {
+		result.push([...current]);
+	}
+
+	if (index === arr.length) return;
+
+	for (let i = index; i < arr.length; i++) {
+		if (current.includes(arr[i])) continue;
+
+		current.push(arr[i]);
+
+		distinctElm(arr, i + 1, current, result);
+
+		current.pop();
+	}
+	return result;
+}
+
+function distinct(arr) {
+	let result = [];
+
+	distinctElm(arr, 0, [], result);
+
+	let uniqueSet = Array.from(new Set(result.map(JSON.stringify)), JSON.parse);
+
+	return uniqueSet;
+}
+
+// let result = distinct([1, 1, 1, 4, 2]);
+
+// console.log(result);
+
 // ================ Problem 13 End ==================================
 // ================ Problem 14 Start ================================
 // ================ Problem 14 End ==================================
