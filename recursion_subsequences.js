@@ -465,6 +465,28 @@ function distinct(arr) {
 
 // ================ Problem 13 End ==================================
 // ================ Problem 14 Start ================================
+// Printing All substring with matching pattern it is the most efficient approach.
+function stringMatch(str, match) {
+	let subStringArray = [];
+	for (let i = 0; i < str.length; i++) {
+		let subString = "";
+		for (let j = i; j < str.length; j++) {
+			subString += str[j];
+			subStringArray.push(subString);
+		}
+	}
+
+	if (subStringArray.includes(match)) {
+		return { subStringArray, matched: true };
+	} else {
+		return { matched: false };
+	}
+}
+
+// let result = stringMatch("Faiz", "z");
+
+// console.log(result);
+
 // ================ Problem 14 End ==================================
 // ================ Problem 15 Start ================================
 // ================ Problem 15 End ==================================
