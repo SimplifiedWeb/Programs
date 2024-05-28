@@ -489,6 +489,51 @@ function stringMatch(str, match) {
 
 // ================ Problem 14 End ==================================
 // ================ Problem 15 Start ================================
+
+function maxProduct(
+	arr,
+	index,
+	current,
+	result,
+	alreadyCalculated = new Set(),
+	maxValue = { max: 0, maxSubset: [] }
+) {
+	if (current.length > 1 && current.length < 3) {
+		let pair = [...current].sort().toString();
+		if (!alreadyCalculated.has(pair)) {
+			let product = current.reduce((acc, val) => acc * val, 1);
+			if (product > maxValue.max) {
+				maxValue.max = product;
+				maxValue.maxSubset = [...current];
+				alreadyCalculated.add(pair);
+				result.push(maxValue);
+			}
+		}
+	}
+
+	if (index === arr.length) return;
+
+	for (let i = index; i < arr.length; i++) {
+		if (current.includes(arr[i])) continue;
+
+		current.push(arr[i]);
+
+		maxProduct(arr, i + 1, current, result, alreadyCalculated, maxValue);
+
+		current.pop();
+	}
+	return result;
+}
+
+function findMaxProduct(arr) {
+	let result = [];
+	maxProduct(arr, 0, [], result);
+	return result[result.length - 1];
+}
+
+// let result = findMaxProduct([3, 2, 1, 4]);
+// console.log(result);
+
 // ================ Problem 15 End ==================================
 // ================ Problem 16 Start ================================
 // ================ Problem 16 End ==================================
