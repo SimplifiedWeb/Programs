@@ -536,6 +536,35 @@ function findMaxProduct(arr) {
 
 // ================ Problem 15 End ==================================
 // ================ Problem 16 Start ================================
+function changeOrder(arr, index, current, result) {
+	if (index === arr.length) {
+		result.push([...current]);
+	}
+
+	for (let i = index; i < arr.length; i++) {
+		if (current.includes(arr[i])) continue;
+
+		current.push(arr[i]);
+
+		changeOrder(arr, i + 1, current, result);
+
+		current.pop();
+	}
+	return result;
+}
+
+function increasingOrder(arr) {
+	let result = [];
+
+	changeOrder(arr, 0, [], result);
+
+	return result.sort((a, b) => a.length - b.length);
+}
+
+// let result = increasingOrder([1, 2, 3, 4]);
+
+// console.log(result);
+
 // ================ Problem 16 End ==================================
 // ================ Problem 17 Start ================================
 // ================ Problem 17 End ==================================
