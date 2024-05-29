@@ -429,7 +429,7 @@ function practice(arr) {
 // ================ Problem 12 End ==================================
 
 // ================ Problem 13 Start ================================
-
+// Find the Unique subset elements.
 function distinctElm(arr, index, current, result) {
 	if (current.length > 1) {
 		result.push([...current]);
@@ -536,6 +536,7 @@ function findMaxProduct(arr) {
 
 // ================ Problem 15 End ==================================
 // ================ Problem 16 Start ================================
+// Subset in the increasing order
 function changeOrder(arr, index, current, result) {
 	if (index === arr.length) {
 		result.push([...current]);
@@ -567,6 +568,7 @@ function increasingOrder(arr) {
 
 // ================ Problem 16 End ==================================
 // ================ Problem 17 Start ================================
+// Finding the longest subset
 function findTheMaxSubset(arr, index, current, maxSubset) {
 	if (current.length > maxSubset.maxLength) {
 		maxSubset.max = [...current];
@@ -601,7 +603,164 @@ function maxLengthSubSequences(arr) {
 
 // ================ Problem 17 End ==================================
 // ================ Problem 18 Start ================================
+// Provide only the two pairs of subsets, remove smaller and bigger then that.
+function generateOnlyPairs(arr, index, current, result) {
+	if (current.length > 1 && current.length < 3) {
+		result.push([...current]);
+	}
+	if (index === arr.length) return;
+
+	for (let i = index; i < arr.length; i++) {
+		if (current.includes(arr[i])) continue;
+
+		current.push(arr[i]);
+
+		generateOnlyPairs(arr, i + 1, current, result);
+		current.pop();
+	}
+
+	return result;
+}
+
+function provideOnlyPairs(arr) {
+	let result = [];
+
+	generateOnlyPairs(arr, 0, [], result);
+
+	return result;
+}
+
+// let result = provideOnlyPairs([2, 1, 3, 5]);
+
+// console.log(result);
+
 // ================ Problem 18 End ==================================
+
 // ================ Problem 19 Start ================================
+// Finding Even, Odd and Hybrid in subsequences
+
+// organizeEvenAndOdd function is not an efficient way
+function organizeEvenAndOdd(current, result) {
+	if (current.length === 1) {
+		current[0] === 2 || current[0] === 1
+			? result.evens.push([...current])
+			: null;
+	}
+	let allEvens = true,
+		allOdds = true;
+
+	for (let i = 0; i < current.length; i++) {
+		if (current[i] % 2 !== 0) {
+			allEvens = false;
+			break;
+		}
+	}
+	if (allEvens) {
+		result.evens.push([...current]);
+		return;
+	}
+	for (let j = 0; j < current.length; j++) {
+		if (current[j] % 2 === 0) {
+			allOdds = false;
+			break;
+		}
+	}
+	if (allOdds) {
+		result.odds.push([...current]);
+		return;
+	}
+	return result.hybrid.push([...current]);
+}
+
+function generateEvenAndOddSubset(arr, index, current, result) {
+	if (current.length > 0) {
+		organizeEvenAndOdd(current, result);
+	}
+
+	if (index === arr.length) return;
+
+	for (let i = index; i < arr.length; i++) {
+		if (current.includes(arr[i])) continue;
+
+		current.push(arr[i]);
+
+		generateEvenAndOddSubset(arr, i + 1, current, result);
+
+		current.pop();
+	}
+	return result;
+}
+
+function evenAndOdd(arr) {
+	let result = { evens: [], odds: [], hybrid: [] };
+
+	generateEvenAndOddSubset(arr, 0, [], result);
+
+	return result;
+}
+// let result = evenAndOdd([3, 2, 4, 1]);
+// console.log(result);
+
 // ================ Problem 19 End ==================================
 // ================ Problem 20 Start ================================
+
+// Even and Odd efficient way
+function organizeEvenAndOdd(current, result) {
+	if (current.length === 1) {
+		current[0] === 2 || current[0] === 1
+			? result.evens.push([...current])
+			: null;
+	}
+
+	let allEvens = false,
+		allOdds = false;
+
+	for (let i = 0; i < current.length; i++) {
+		if (current[i] % 2 === 0) {
+			allEvens = true;
+		} else {
+			allOdds = true;
+		}
+
+		if (allEvens && allOdds) {
+			result.hybrid.push([...current]);
+			return;
+		}
+	}
+	if (allEvens) {
+		result.evens.push([...current]);
+	} else {
+		result.odds.push([...current]);
+	}
+}
+
+function generateEvenAndOddSubset(arr, index, current, result) {
+	if (current.length > 0) {
+		organizeEvenAndOdd(current, result);
+	}
+
+	if (index === arr.length) return;
+
+	for (let i = index; i < arr.length; i++) {
+		if (current.includes(arr[i])) continue;
+
+		current.push(arr[i]);
+
+		generateEvenAndOddSubset(arr, i + 1, current, result);
+
+		current.pop();
+	}
+	return result;
+}
+
+function evenAndOdd(arr) {
+	let result = { evens: [], odds: [], hybrid: [] };
+
+	generateEvenAndOddSubset(arr, 0, [], result);
+
+	return result;
+}
+// let result = evenAndOdd([3, 2, 4, 1]);
+// console.log(result);
+
+// ================ Problem 20 End ================================
