@@ -567,6 +567,38 @@ function increasingOrder(arr) {
 
 // ================ Problem 16 End ==================================
 // ================ Problem 17 Start ================================
+function findTheMaxSubset(arr, index, current, maxSubset) {
+	if (current.length > maxSubset.maxLength) {
+		maxSubset.max = [...current];
+		maxSubset.maxLength = current.length;
+	}
+
+	if (index === arr.length) return;
+
+	for (let i = index; i < arr.length; i++) {
+		if (current.includes(arr[i])) continue;
+
+		current.push(arr[i]);
+
+		findTheMaxSubset(arr, i + 1, current, maxSubset);
+
+		current.pop();
+	}
+	return maxSubset;
+}
+
+function maxLengthSubSequences(arr) {
+	let maxSubset = { max: [], maxLength: 0 };
+
+	findTheMaxSubset(arr, 0, [], maxSubset);
+
+	return maxSubset;
+}
+
+// let result = maxLengthSubSequences([3, 2, 1, 4]);
+
+// console.log(result);
+
 // ================ Problem 17 End ==================================
 // ================ Problem 18 Start ================================
 // ================ Problem 18 End ==================================
