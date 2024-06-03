@@ -1,6 +1,13 @@
 // ================ Problem 1 Start ==================================
 // Validate Email Address
 // Note : use inbuilt function just for extracting (optional)
+// - Must contain exactly one '@' symbol.
+// - Must have a non-empty username before the '@' symbol.
+// - Must have a non-empty domain after the '@' symbol.
+// - Must end with a valid top-level domain (e.g., .com, .co.in, .net).
+// - Only alphanumeric characters, dots (.), underscores (_), and hyphens (-) are allowed.
+// - No consecutive dots (.), underscores (_), or hyphens (-).
+// - No spaces allowed.
 function checkForInvalidSpecialCharacters(email) {
 	let indexOfAtTheRate = -1,
 		count = 0;
@@ -65,3 +72,161 @@ function checkForEmail(email) {
 // console.log(checkForEmail("test@ex ample.com"));
 
 // ================ Problem 1 End ================================
+
+// ================ Problem 2 Start ================================
+
+// Password Validations
+// Note : use inbuilt function just for extracting (optional)
+// Minimum length of 8 characters.
+// Must contain at least one uppercase letter.
+// Must contain at least one lowercase letter.
+// Must contain at least one digit.
+// Must contain at least one special character from the set !@#$%^&*()
+function checkForSpecialCharacters(validCases) {
+	let isFoundSpecialChar = false;
+	for (let i = 0; i < validCases.length; i++) {
+		let currentCharCode = validCases.charCodeAt(i);
+
+		if (currentCharCode >= 33 && currentCharCode <= 47) {
+			isFoundSpecialChar = true;
+			break;
+		}
+	}
+
+	if (isFoundSpecialChar) {
+		return { password: `Email is Valid - ${true}` };
+	}
+	return {
+		password: `Email is not valid. Provided special characters are not allowed, use - "!@#$%^&*()" - ${false}`,
+	};
+}
+
+function checkForCasesAndDigits(pass) {
+	// let uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	// let lowercase = "abcdefghijklmnopqrstuvwxyz";
+	// let digits = "0123456789";
+	// let specialChar = "!@#$%^&*()";
+	// let characterSet = {
+	// 	uppercase: {},
+	// 	lowercase: {},
+	// 	digits: {},
+	// 	specialChar: {},
+	// };
+	// for (let i = 0; i < specialChar.length; i++) {
+	// 	characterSet.specialChar[specialChar[i]] = i + 1;
+	// }
+	// console.log(characterSet.specialChar);
+
+	let characterSet = {
+		uppercase: {
+			A: 1,
+			B: 2,
+			C: 3,
+			D: 4,
+			E: 5,
+			F: 6,
+			G: 7,
+			H: 8,
+			I: 9,
+			J: 10,
+			K: 11,
+			L: 12,
+			M: 13,
+			N: 14,
+			O: 15,
+			P: 16,
+			Q: 17,
+			R: 18,
+			S: 19,
+			T: 20,
+			U: 21,
+			V: 22,
+			W: 23,
+			X: 24,
+			Y: 25,
+			Z: 26,
+		},
+		lowercase: {
+			a: 1,
+			b: 2,
+			c: 3,
+			d: 4,
+			e: 5,
+			f: 6,
+			g: 7,
+			h: 8,
+			i: 9,
+			j: 10,
+			k: 11,
+			l: 12,
+			m: 13,
+			n: 14,
+			o: 15,
+			p: 16,
+			q: 17,
+			r: 18,
+			s: 19,
+			t: 20,
+			u: 21,
+			v: 22,
+			w: 23,
+			x: 24,
+			y: 25,
+			z: 26,
+		},
+		digits: {
+			0: 1,
+			1: 2,
+			2: 3,
+			3: 4,
+			4: 5,
+			5: 6,
+			6: 7,
+			7: 8,
+			8: 9,
+			9: 10,
+		},
+	};
+
+	let isFoundUppercase = false,
+		isFoundLowercase = false,
+		isFoundDigits = false;
+
+	for (let i = 0; i < pass.length; i++) {
+		if (characterSet.uppercase.hasOwnProperty(pass[i])) {
+			isFoundUppercase = true;
+		} else if (characterSet.lowercase.hasOwnProperty(pass[i])) {
+			isFoundLowercase = true;
+		} else if (characterSet.digits.hasOwnProperty(pass[i])) {
+			isFoundDigits = true;
+		}
+	}
+
+	if (isFoundDigits && isFoundLowercase && isFoundUppercase) {
+		return true;
+	} else {
+		return {
+			password: `At least one uppercase, lowercase and digit - ${false}`,
+		};
+	}
+}
+
+function checkForPasswordValidation(pass) {
+	let validCases = checkForCasesAndDigits(pass);
+	if (validCases === true) {
+		return checkForSpecialCharacters(pass);
+	}
+	return validCases;
+}
+
+function checkForPassword(pass) {
+	if (pass.length >= 8) {
+		let result = checkForPasswordValidation(pass);
+		return result;
+	}
+	return { password: `Check length of password - ${false}` };
+}
+
+// console.log(checkForPassword("Faiz_an@123"));
+
+// ================ Problem 2 End ==================================
