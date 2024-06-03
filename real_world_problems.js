@@ -76,7 +76,7 @@ function checkForEmail(email) {
 // ================ Problem 2 Start ================================
 
 // Password Validations
-// Note : use inbuilt function just for extracting (optional)
+// Note : Minimum use of inbuilt function
 // Minimum length of 8 characters.
 // Must contain at least one uppercase letter.
 // Must contain at least one lowercase letter.
