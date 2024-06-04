@@ -228,7 +228,6 @@ function checkForPassword(pass) {
 }
 
 // console.log(checkForPassword("Faiz_an@123"));
-
 // ================ Problem 2 End ==================================
 
 // ================ Problem 3 Start ==================================
@@ -250,5 +249,49 @@ let targetTime = new Date("2024-06-05").getTime();
 
 // let result = checkForValidity(targetTime);
 // console.log(result);
-
 // ================ Problem 3 End ==================================
+
+// ================ Problem 4 Start ==================================
+// Write a function to format a date in a specific format (e.g., MM/DD/YYYY, DD/MM/YYYY).
+function preZerosForSingleDays(elm) {
+	return elm < 10 ? "0" + elm : elm;
+}
+function formatDate(date) {
+	let data = [date.getMonth(), date.getDay(), date.getFullYear()];
+
+	for (let i = 0; i < data.length; i++) {
+		data[i] = preZerosForSingleDays(data[i]);
+	}
+
+	return `${data[0]}/${data[1]}/${data[2]}`;
+}
+
+// let result = formatDate(new Date());
+// console.log(result);
+// ================ Problem 4 End ==================================
+
+// ================ Problem 5 Start ==================================
+// Write a function to generate a random string of a specified length.
+function randomString(n) {
+	if (n === 0 || n === 1) return "It would be atleast 2";
+	let uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	// let str = "";
+	let str = [];
+
+	for (let i = 0; i < n; i++) {
+		// Approach = 1
+		// This Approach will indeed join each string and it is not efficient.
+		// str += uppercase[Math.floor(Math.random() * uppercase.length - 1)];
+
+		// Approach = 2
+		// Using Arrays is more efficient
+		str.push(uppercase[Math.floor(Math.random() * uppercase.length)]);
+	}
+	// return str[0] + str.slice(1, str.length).toLowerCase();
+
+	return str.join("").toLowerCase();
+}
+
+// let result = randomString(10);
+// console.log(result);
+// ================ Problem 5 End ==================================
