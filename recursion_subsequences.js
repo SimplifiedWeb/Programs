@@ -803,3 +803,58 @@ function comb(arr, target) {
 // console.log(result);
 
 // ================ Problem 1 End ================================
+
+// ================ Problem 2 Start ================================
+// combination sum = 2 => finding all the unique subsets that sum up to the target.
+function generateUniqueCombinations(
+	arr,
+	index,
+	current,
+	target,
+	result,
+	alreadyCalculated = new Set()
+) {
+	if (current.length > 0) {
+		let pair = [...current].sort().toString();
+
+		if (!alreadyCalculated.has(pair)) {
+			let sum = current.reduce((acc, val) => acc + val, 0);
+			alreadyCalculated.add(pair);
+
+			if (sum === target) {
+				result.push([...current]);
+				return;
+			}
+		}
+	}
+
+	if (index === arr.length) return;
+
+	for (let i = index; i < arr.length; i++) {
+		if (current.includes(arr[i])) continue;
+
+		current.push(arr[i]);
+
+		generateUniqueCombinations(
+			arr,
+			i + 1,
+			current,
+			target,
+			result,
+			alreadyCalculated
+		);
+
+		current.pop();
+	}
+}
+
+function findUniqueSubsetMax(arr, target) {
+	let result = [];
+	generateUniqueCombinations(arr, 0, [], target, result);
+	return result;
+}
+
+// let result = findUniqueSubsetMax([1, 2, 3, 4, 1], 5);
+// console.log(result);
+
+// ================ Problem 2 End ================================
