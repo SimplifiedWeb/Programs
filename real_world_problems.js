@@ -230,3 +230,25 @@ function checkForPassword(pass) {
 // console.log(checkForPassword("Faiz_an@123"));
 
 // ================ Problem 2 End ==================================
+
+// ================ Problem 3 Start ==================================
+// Write a function that check for the validity time or not
+function checkForValidity(targetTime) {
+	let currentTime = new Date().getTime();
+	if (currentTime > targetTime) {
+		return "Validity is over";
+	}
+
+	return "Still in Validity";
+}
+
+// Approach - 1 by calculation
+// let targetTime = new Date().getTime() + 5 * 60 * 1000;
+
+// Approach - 2
+let targetTime = new Date("2024-06-05").getTime();
+
+// let result = checkForValidity(targetTime);
+// console.log(result);
+
+// ================ Problem 3 End ==================================
