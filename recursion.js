@@ -16,8 +16,6 @@ function digit(n, count = 0) {
 // console.log(digit(12345));
 // ================ Problem 1 End ================================
 
-
-
 // ================ Problem 2 Start ================================
 // Sum of Digits using Recursion.
 function helper(n, sum = 0) {
@@ -39,8 +37,6 @@ function sumOfDigits(n) {
 // console.log(res);
 // ================ Problem 2 End ================================
 
-
-
 // ================ Problem 3 start ================================
 // Reverse a number using Recursion.
 function reversedFunction(n, rev = 0) {
@@ -56,8 +52,6 @@ function reverseANumber(n) {
 	return reversedFunction(n);
 }
 // ================ Problem 3 End ================================
-
-
 
 // ================ Problem 4 start ================================
 function reverseString(str, rev = "", index = str.length - 1) {
@@ -76,8 +70,6 @@ function stringReverse(str) {
 // console.log(stringReverse("faizan"));
 // ================ Problem 4 End ================================
 
-
-
 // ================ Problem 5 start ================================
 // Print 1 to N using Recursion
 function printN(n, index = 1) {
@@ -93,8 +85,6 @@ function printN(n, index = 1) {
 // printN(100);
 // ================ Problem 5 End ================================
 
-
-
 // ================ Problem 6 start ================================
 function printSumOfN(n, sum = 0, index = 1) {
 	if (n === index) {
@@ -105,8 +95,6 @@ function printSumOfN(n, sum = 0, index = 1) {
 }
 // console.log(printSumOfN(10));
 // ================ Problem 6 End ================================
-
-
 
 // ================ Problem 7 start ================================
 function factorial(n, fact = 1, index = 1) {
@@ -122,8 +110,6 @@ function factorial(n, fact = 1, index = 1) {
 // console.log(factorial(4));
 // ================ Problem 7 End ================================
 
-
-
 // ================ Problem 8 start ================================
 // Count the zeros
 function countZeros(n, count = 0) {
@@ -138,8 +124,6 @@ function countZeros(n, count = 0) {
 }
 // console.log(countZeros(1003402));
 // ================ Problem 8 End ================================
-
-
 
 // ================ Problem 9 start ================================
 // Palindrome
@@ -163,8 +147,6 @@ function palindrome(n, org = n, rev = 0) {
 // console.log(result ? "It is Palindrome" : "It is not Palindrome");
 // ================ Problem 9 End ================================
 
-
-
 // ================ Problem 10 start ================================
 // Iterate over an Array using Recursion
 function iterateArray(arr, index = 0) {
@@ -178,8 +160,6 @@ function iterateArray(arr, index = 0) {
 }
 // iterateArray([1, 2, 3, 4, 5]);
 // ================ Problem 10 End ================================
-
-
 
 // ================ Problem 11 start ================================
 // Print N to 1
@@ -195,8 +175,6 @@ function printN(n) {
 // printN(5);
 // ================ Problem 11 End ================
 
-
-
 // ================ Problem 12 start ================================
 // Sum of N numbers
 function sumOfN(n, total = 0) {
@@ -210,8 +188,6 @@ function sumOfN(n, total = 0) {
 // console.log(sumOfN(5));
 // ================ Problem 12 End ================================
 
-
-
 // ================ Problem 13 start ================================
 // using recursion functional approach
 function sumOfN(n) {
@@ -223,8 +199,6 @@ function sumOfN(n) {
 }
 // console.log(sumOfN(5));
 // ================ Problem 13 End ================================
-
-
 
 // ================ Problem 14 start ================================
 // product of N using functional approach
@@ -239,8 +213,6 @@ function productOfN(n) {
 // console.log(productOfN(1));
 // ================ Problem 14 End ================================
 
-
-
 // ================ Problem 15 start ================================
 // sum of Array element
 function sumOfArray(arr) {
@@ -254,8 +226,6 @@ function sumOfArray(arr) {
 // console.log(sumOfArray([1, 2, 3, 4]));
 // ================ Problem 15 End ================================
 
-
-
 // ================ Problem 16 start ================================
 // count number of digits
 function countNumberOfDigits(n, count = 0) {
@@ -268,8 +238,6 @@ function countNumberOfDigits(n, count = 0) {
 }
 // console.log(countNumberOfDigits(123455));
 // ================ Problem 16 End ================================
-
-
 
 // ================ Problem 17 start ================================
 // Approach = 1
@@ -303,8 +271,6 @@ function reverse(arr, index = 0) {
 // console.log(reverse([1, 2, 3, 4, 5]));
 // ================ Problem 17 End ================================
 
-
-
 // ================ Problem 18 start ================================
 function palindrome(str, index = 0) {
 	if (index === Math.floor(str.length / 2)) {
@@ -319,8 +285,6 @@ function palindrome(str, index = 0) {
 
 // console.log(palindrome("madqm"));
 // ================ Problem 18 End ================================
-
-
 
 // ================ Problem 19 start ================================
 // Fibonacci
@@ -338,8 +302,6 @@ function fib(n) {
 // console.log(fib(4));
 // ================ Problem 19 End ================================
 
-
-
 // ================ Problem 20 start ================================
 // Fibonacci
 function fib(n, arr = [0, 1], index = 2) {
@@ -352,8 +314,6 @@ function fib(n, arr = [0, 1], index = 2) {
 // let result = fib(10);
 // console.log(result.pop());
 // ================ Problem 20 End ================================
-
-
 
 // ================ Problem 21 start ================================
 // Fibonacci optimal version
@@ -372,8 +332,6 @@ function fib(n, calculated = {}) {
 
 // console.log(fib(10));
 // ================ Problem 21 End ================================
-
-
 
 // ================ Problem 22 start ==============================================
 // Sum, Product, Count, Reverse, occurrences, checkZeros, removeDup, largest, smallest, second_largest, kth, peakElement of an Array elements using Recursion.
@@ -492,8 +450,6 @@ function operations(
 // console.log(operations([20, 43, 432, 349, 432, 34, 9, 0, 0, 2, 34, 73]));
 // ================ Problem 22 End ==============================================
 
-
-
 // ================ Problem 23 start ================
 // Extract, Sum, Count, reverse of Digits
 // simpler version of multiple operations
@@ -513,8 +469,6 @@ function extractDigits(n, count = 0, sum = 0, reverse = 0) {
 // const result = extractDigits(12345);
 // console.log(result)
 // ================ Problem 23 End ================
-
-
 
 // ================ Problem 24 start ================
 // ================ Problem 24 End ================

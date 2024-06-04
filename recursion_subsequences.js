@@ -764,3 +764,42 @@ function evenAndOdd(arr) {
 // console.log(result);
 
 // ================ Problem 20 End ================================
+
+// Combinations and Permutations ************************************************************************
+
+// ================ Problem 1 Start ================================
+// Given an array of positive integers (candidates) and a target integer, you need to find all unique combinations of candidates where the chosen numbers sum to the target. You may use each candidate number an unlimited number of times. The order in which you combine the candidates matters as each combination should be unique
+function generateCombinations(arr, index, current, result, target) {
+	if (target === 0) {
+		result.push([...current]);
+		return;
+	}
+
+	if (target < 0 || index === arr.length) {
+		return;
+	}
+
+	for (let i = index; i < arr.length; i++) {
+		current.push(arr[i]);
+
+		// We wont increase the index we stayed on that particular index and move to the next once we ensure each possible path for each particular elements in an array.
+		generateCombinations(arr, i, current, result, target - arr[i]);
+
+		current.pop();
+	}
+
+	return result;
+}
+
+function comb(arr, target) {
+	let result = [];
+
+	generateCombinations(arr, 0, [], result, target);
+
+	return result;
+}
+
+// let result = comb([1, 2, 3], 5);
+// console.log(result);
+
+// ================ Problem 1 End ================================
