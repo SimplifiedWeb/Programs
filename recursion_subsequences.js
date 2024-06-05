@@ -858,3 +858,60 @@ function findUniqueSubsetMax(arr, target) {
 // console.log(result);
 
 // ================ Problem 2 End ================================
+
+// ================ Problem 3 Start ================================
+
+// Subset Sum = 2 problem where we need to find all the unique possible sum
+// Find the target sum in the subset
+function generateSubsetSum(
+	arr,
+	index,
+	current,
+	result,
+	target,
+	alreadyCalculated = new Set()
+) {
+	if (current.length > 1 && current.length < 3) {
+		let pair = [...current].sort().toString();
+
+		if (!alreadyCalculated.has(pair)) {
+			let maxSum = current.reduce((acc, val) => acc + val, 0);
+
+			if (maxSum === target) {
+				result.sum = maxSum;
+				result.subSet.push([...current]);
+			}
+
+			alreadyCalculated.add(pair);
+		}
+	}
+
+	if (index === arr.length) return;
+
+	for (let i = index; i < arr.length; i++) {
+		if (current.includes(arr[i])) continue;
+
+		current.push(arr[i]);
+
+		generateSubsetSum(arr, i + 1, current, result, target, alreadyCalculated);
+
+		current.pop();
+	}
+	return result;
+}
+
+function checkForSum(arr, target) {
+	let result = {
+		sum: 0,
+		subSet: [],
+	};
+
+	generateSubsetSum(arr, 0, [], result, target);
+
+	return result;
+}
+
+// let result = checkForSum([3, 2, 1, 4], 7);
+// console.log(result);
+
+// ================ Problem 3 End ================================
