@@ -295,3 +295,31 @@ function randomString(n) {
 // let result = randomString(10);
 // console.log(result);
 // ================ Problem 5 End ==================================
+
+// ================ Problem 6 Start ==================================
+// Write a function to truncate a string to a specified length and add an ellipsis (...) at the end.
+function generateTruncate(sentence, target) {
+	let str = "";
+	for (let i = 0; i < sentence.length; i++) {
+		if (i === target) break;
+
+		str += sentence[i];
+	}
+	let ellipsis = "...";
+	return str.concat(ellipsis);
+}
+
+function truncateSentences(sentence, target) {
+	if (sentence.length < 2) return "add Some more words";
+
+	if (target === 0 || target === 1) return "target starts from atleast 10";
+
+	return generateTruncate(sentence, target);
+}
+
+let sentence = "My name is faizan and I'm going to be a Great developer";
+
+// let result = truncateSentences(sentence, 10);
+// console.log(result);
+
+// ================ Problem 6 End ==================================
