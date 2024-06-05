@@ -323,3 +323,42 @@ let sentence = "My name is faizan and I'm going to be a Great developer";
 // console.log(result);
 
 // ================ Problem 6 End ==================================
+
+// ================ Problem 7 Start ==================================
+// Write a function convert a string into a camelCase
+function camelCaseForSingleString(str) {
+	let midIndex = Math.floor(str.length / 2) + 1;
+
+	let firstHalf = str.slice(0, midIndex).toLowerCase();
+
+	let secondHalf = str.slice(midIndex).toLowerCase();
+
+	secondHalf = secondHalf[0].toUpperCase() + secondHalf.slice(1, str.length);
+
+	return `${firstHalf}${secondHalf}`;
+}
+// console.log(camelCaseForSingleString("uppercase"));
+// ================ Problem 7 End ==================================
+
+// ================ Problem 8 Start ==================================
+//Write a function to implement a simple search functionality on an array of objects.
+let data = [
+	{ id: 1, name: "Alice", age: 28 },
+	{ id: 2, name: "Bob", age: 34 },
+	{ id: 3, name: "Charlie", age: 22 },
+	{ id: 4, name: "David", age: 34 },
+];
+
+function search(data, searchKey, searchValue) {
+	if (data.length === 0) return "empty";
+
+	let result = data.filter((currElm) => currElm[searchKey] === searchValue);
+	if (result.length === 0) return "Item not present";
+	return result;
+}
+const searchKey = "name";
+const searchValue = "Eve";
+// let result = search(data, searchKey, searchValue);
+// console.log(result);
+
+// ================ Problem 8 End ==================================
