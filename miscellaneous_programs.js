@@ -27,3 +27,33 @@ function findWords(arr) {
 // console.log(result);
 
 // ================ Problem 1 End ================================
+
+// ================ Problem 2 Start ================================
+
+// Print the given star
+//         1
+//       1 2 1
+//     1 2 3 2 1
+//   1 2 3 4 3 2 1
+// 1 2 3 4 5 4 3 2 1
+
+function printPattern(n) {
+	for (let i = 0; i < n; i++) {
+		let str = "";
+		for (let j = 0; j < n - i - 1; j++) {
+			str += " ";
+		}
+		for (let k = 0; k < 2 + i - 1; k++) {
+			str += k + 1;
+		}
+
+		for (let j = 1; j <= i; j++) {
+			str += j;
+		}
+		console.log(str);
+	}
+}
+
+// printPattern(5);
+
+// ================ Problem 2 End ================================
